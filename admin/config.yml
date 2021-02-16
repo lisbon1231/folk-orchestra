@@ -9,31 +9,32 @@ collections:
     name: "Members" 
     folder: "content/members"
     create: true
-    # slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{fields.name}}_{{fields.role}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-    - { label: "Имя", name: "Name", widget: "string"}
+    - { label: "Имя", name: "name", widget: "string"}
     - { label: "Инструмент", name: "instrument", widget: "select", options: ["guitar", "violen", "balalaika"], multiple: true }
     - { label: "Роль", name: "role", widget: "select", options: ["conductor", "musician"], default: "musician", multiple: true }
     - { label: "Работает", name: "works", widget: "select", options: ["да", "нет"], default: "да"}
     - { label: "О человеке", name: "history", widget: "markdown" }
-    - { label: "Фото", name: "photo", widget: "image" }
+    - { label: "Фото", name: "photo", widget: "image", required: false }
+    - label: "Участник"
+      name: "participant"
+      widget: "relation"
+      required: false
+      collection: "Events"
+      value_field: "title"
+      search_fields: ["title", "date"]
+      display_fields: ["{{title}} - {{date}}"]
+      multiple: true
   - label: "События"
     name: "Events" 
     folder: "content/events"
     create: true
     fields: 
-    - { label: "Название", name: "Title", widget: "string"}
+    - { label: "Название", name: "title", widget: "string"}
     - { label: "Описание", name: "description", widget: "markdown" }
     - { label: "Место проведения", name: "place", widget: "string" }
     - { label: "Дата", name: "date", widget: "date", date_format: "DD / MM / YYYY", time_format: "" }
     - { label: "Время", name: "time", widget: "date", date_format: "", time_format: "HH : mm" }
     - { label: "Афиша", name: "poster", widget: "image", allow_multiple: false, media_folder: "posters" }
     - { label: "Продолжительность", name: "duration", widget: "number", value_type: float}
-    
-    # - { label: "Состав", name: "date", widget: "datetime" }
-      # - { label: "О человеке", name: "history", widget: "markdown" }
-      # - { label: "Фото", name: "photo", widget: "image" }
-      # - { label: "О человеке", name: "history", widget: "datetime" }
-      # - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      # - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      # - {label: "Body", name: "body", widget: "markdown", , default: "blog" }
