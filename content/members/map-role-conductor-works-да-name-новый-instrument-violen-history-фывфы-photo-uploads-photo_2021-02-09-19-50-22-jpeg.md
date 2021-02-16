@@ -1,5 +1,5 @@
 ---
-Name: новый
+Name: 2новый
 instrument:
   - balalaika
 role:
