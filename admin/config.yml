@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: lisbon1231/folk-orchestra
+  branch: main
+media_folder: "static/uploads"
+public_folder: "/uploads"
+collections:
+  - label: "Состав"
+    name: "Members" 
+    folder: "content/members"
+    create: true
+    # slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  

@@ -1,0 +1,23 @@
+{
+  "name": "folk-orchestra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bla.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisbon1231/folk-orchestra.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lisbon1231/folk-orchestra/issues"
+  },
+  "homepage": "https://github.com/lisbon1231/folk-orchestra#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}
