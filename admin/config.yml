@@ -38,3 +38,14 @@ collections:
     - { label: "Время", name: "time", widget: "date", date_format: "", time_format: "HH : mm" }
     - { label: "Афиша", name: "poster", widget: "image", allow_multiple: false, media_folder: "posters" }
     - { label: "Продолжительность", name: "duration", widget: "number", value_type: float}
+  
+  - label: "Про оркестр"
+    name: "About"
+    folder: "content/info"
+    create: true
+    fields: 
+    - { label: "Название", name: "title", widget: "string"}
+    - { label: "Краткое описание", name: "short_description", widget: "string" }
+    - { label: "Среднее описание", name: "middle_description", widget: "markdown" }
+    - { label: "Полное описание", name: "long_description", widget: "markdown" }
+        
