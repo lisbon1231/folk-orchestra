@@ -37,9 +37,23 @@ title: My Rad Blog
         <p class="intro__main-text">{{ info.data.middle_description}}</p>
         <a class="intro__link-details" href="#">Подробнее</a>
       </div>
+    {%- endfor -%}
       <div class="upcomming ">
         <h2 class="upcomming__section-title section title">Ближайшие концерты:</h2>
         <ul class="upcomming__grid">
+          {%- for event in collections.events -%}
+            <li class="upcomming__item">
+              <div class="upcomming__info">
+                <span class="upcomming__date">{{ event.data.date }}</span>
+                <h3 class="upcomming__title">{{ event.data.title }}</h3>
+                <p class="upcomming__description">
+                  {{ event.data.short_description }}
+                </p>
+                <span class="upcomming__entrance">{{ !event.data.price && "Вход свободный" }}</span>
+                <a href="#" class="upcomming__link">Подробнее</a>
+              </div>
+            </li>
+          {%- endfor -%}
           <li class="upcomming__item">
             {# <img src="../../../../static/afisha1.jpg" class="upcomming__image"/> #}
             <div class="upcomming__info">
@@ -88,8 +102,6 @@ title: My Rad Blog
         </ul>
       </div>
       <div class="gallery"></div>
-
-    {%- endfor -%}
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
