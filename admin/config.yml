@@ -32,17 +32,20 @@ collections:
     create: true
     fields: 
     - { label: "Название", name: "title", widget: "string"}
-    - { label: "Описание", name: "description", widget: "markdown" }
+    - { label: "Короткое описание", name: "short_description", widget: "markdown" }
+    - { label: "Подробное Описание", name: "full_description", widget: "markdown" }
     - { label: "Место проведения", name: "place", widget: "string" }
     - { label: "Дата", name: "date", widget: "date", date_format: "DD / MM / YYYY", time_format: "" }
-    - { label: "Время", name: "time", widget: "date", date_format: "", time_format: "HH : mm" }
+    - { label: "Время", name: "time", widget: "time", date_format: "", time_format: "HH : mm" }
     - { label: "Афиша", name: "poster", widget: "image", allow_multiple: false, media_folder: "posters" }
-    - { label: "Продолжительность", name: "duration", widget: "number", value_type: float}
+    - { label: "Продолжительность", name: "duration", widget: "number", value_type: "float"}
+    - { label: "Вход платный", name: "price", widget: "boolean"}
   
   - label: "Про оркестр"
     name: "About"
     folder: "content/info"
     create: true
+    slug: "info"
     fields: 
     - { label: "Название", name: "title", widget: "string"}
     - { label: "Краткое описание", name: "short_description", widget: "string" }

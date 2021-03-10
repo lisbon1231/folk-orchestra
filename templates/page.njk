@@ -7,10 +7,13 @@ title: My Rad Blog
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{{ info.data.title }}</title>
   </head>
   <body>
-    sdfs
-    {{ content | safe }}
+  layout
+  {%- for info in collections.info -%}
+  <li>{{ info.data.title }}</li>
+{%- endfor -%}
+    {{ info.title }}
   </body>
 </html>
