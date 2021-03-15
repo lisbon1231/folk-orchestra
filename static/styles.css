@@ -528,6 +528,7 @@ p.intro__main-text:before {
     display: flex;
     margin-bottom: 20px;
     overflow: hidden;
+    align-items: baseline;
 }
 
 
@@ -635,4 +636,19 @@ p.intro__main-text:before {
     letter-spacing: .1em;
     font-weight: 500;
     font-size: 12px;
+}
+
+@media screen and (min-width: 1500px) {
+    .banner {
+        background-position: -550px -230px;
+        background-size: 140%;
+    }
+}
+
+
+@media screen and (min-width: 1800px) {
+    .banner {
+        background-position: -550px -230px;
+        background-size: 130%;
+    }
 }
