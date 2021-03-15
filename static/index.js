@@ -12,10 +12,29 @@ const slickOpts = {
 }
 
 
-$(document).ready(function(){
-    $('.upcomming__grid').slick({
-        infinite: false,
-        slidesToShow: 4,
-        slidesToScroll: 1
+$(document).ready(function () {
+    const title = document.querySelector('.banner__title');
+    const header = document.querySelector('.header');
+
+    // $('.upcomming').slick({
+    //     infinite: false,
+    //     slidesToShow: 4,
+    //     slidesToScroll: 1,
+    //     dots: true
+    // });
+
+    $(window).scroll(function () {
+        if (!isElementBelow(title, 100)) {
+            header.classList.add('header_fixed')
+        } else {
+            header.classList.remove('header_fixed')
+        }
     });
 });
+
+
+function isElementBelow(element, error = 0) {
+    const coordinates = element.getBoundingClientRect();
+    // return coordinates.y + coordinates.height >= 0
+    return coordinates.y - error >= 0
+}

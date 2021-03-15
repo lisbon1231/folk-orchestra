@@ -39,9 +39,9 @@ title: My Rad Blog
       </div>
     {%- endfor -%}
     <div class="section">
-      <h2 class="section__title limiter title">Ближайшие концерты:</h2>
+      <h2 class="section__title limiter title">Ближайшие концерты</h2>
       <ul class="upcomming">
-        {%- for event in collections.events -%}
+        {# {%- for event in collections.events -%}
           <li class="upcomming__item">
             <div class="upcomming__info">
               <span class="upcomming__date">{{ event.data.date2 }}</span>
@@ -52,10 +52,20 @@ title: My Rad Blog
               <span class="upcomming__entrance">
                 {% if not event.data.price %} Вход свободный {% endif %}
               </span>
-              <a href="#" class="upcomming__link">Подробнее</a>
             </div>
           </li>
-        {%- endfor -%}
+        {%- endfor -%} #}
+        <li class="upcomming__item">
+          <div class="upcomming__info">
+            <span class="upcomming__date">28 декабря 19:00</span>
+            <h3 class="upcomming__title">Метель</h3>
+            <p class="upcomming__description">
+                Музыкальные иллюстрации к повести Пушкина. 
+              </p>
+            <span class="upcomming__entrance">Вход свободный</span>
+            <a href="#" class="upcomming__link">Подробнее</a>
+          </div>
+        </li>
         <li class="upcomming__item">
           <div class="upcomming__info">
             <span class="upcomming__date">30 ноября 18:00</span>
@@ -69,10 +79,10 @@ title: My Rad Blog
         </li>
         <li class="upcomming__item">
           <div class="upcomming__info">
-            <span class="upcomming__date">28 декабря 19:00</span>
-            <h3 class="upcomming__title">Метель</h3>
+            <span class="upcomming__date">30 июня 13:00</span>
+            <h3 class="upcomming__title">День балалайки</h3>
             <p class="upcomming__description">
-                Музыкальные иллюстрации к повести Пушкина. 
+                Музыка солнечной долины
               </p>
             <span class="upcomming__entrance">Вход свободный</span>
             <a href="#" class="upcomming__link">Подробнее</a>
@@ -80,10 +90,10 @@ title: My Rad Blog
         </li>
         <li class="upcomming__item">
           <div class="upcomming__info">
-            <span class="upcomming__date">28 декабря 19:00</span>
-            <h3 class="upcomming__title">Метель</h3>
+            <span class="upcomming__date">29 марта 18:00</span>
+            <h3 class="upcomming__title">9 лет оркестру</h3>
             <p class="upcomming__description">
-                Музыкальные иллюстрации к повести Пушкина. 
+                Концерт в честь 5-летия воссоединения Крыма с Россией
               </p>
             <span class="upcomming__entrance">Вход свободный</span>
             <a href="#" class="upcomming__link">Подробнее</a>
@@ -92,7 +102,7 @@ title: My Rad Blog
       </ul>
     </div>
     <div class="section">
-      <h2 class="section__title limiter title">Новости:</h2>
+      <h2 class="section__title limiter title">Новости</h2>
       <ul class="news">
         <li class="news__item">
           <img src="../../../../static/uploads/bla.jpeg" class="news__img">
@@ -133,7 +143,24 @@ title: My Rad Blog
       </ul>
     </div>
 
-    <div class="gallery"></div>
+    {# <div class="gallery"></div> #}
+    <footer class="footer">
+      <ul class="footer__links">
+        <li class="footer__link-item">
+          <a class="footer__link footer__link_theme_vk"></a>
+        </li>
+        <li class="footer__link-item">
+          <a class="footer__link footer__link_theme_fb"></a>
+        </li>
+        <li class="footer__link-item">
+          <a class="footer__link footer__link_theme_inst"></a>
+        </li>
+        <li class="footer__link-item">
+          <a class="footer__link footer__link_theme_gg"></a>
+        </li>
+      </ul>
+      <p class="footer__copyright">@Крымский оркестр русских народных инструментов им. Г.Г. Шендерева</p>
+    </footer>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
