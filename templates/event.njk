@@ -1,5 +1,5 @@
 ---
-title: My Rad Blog
+title: Events
 ---
 
 <!doctype html>
@@ -12,8 +12,8 @@ title: My Rad Blog
   <body>
   layout
   {%- for info in collections.info -%}
-  <li>{{ info.data.title }}</li>
-{%- endfor -%}
-    {{ info.title }}
+    <li>{{ info.data.title }}</li>
+  {%- endfor -%}
+  {# {{ info.title }} #}
   </body>
 </html>
