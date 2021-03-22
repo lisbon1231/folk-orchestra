@@ -1,4 +1,5 @@
 ---
+tags: members
 name: Вовчик
 instrument:
   - violen

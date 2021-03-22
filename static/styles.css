@@ -769,7 +769,7 @@ p.intro__main-text:before {
 .afisha__full-description {
     margin: 0;
     padding-bottom: 44px;
-    padding-top: 44px;
+    padding-top: 88px;
     /* border-bottom: 1px solid #7b7b7b; */
     margin-bottom: 44px;
 }
@@ -822,6 +822,35 @@ p.intro__main-text:before {
 .link:hover, .link:visited {
     text-decoration: none;
     color: #9fa628;
+}
+
+.afisha__troupe {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.member {
+    text-align: center;
+    cursor: pointer;
+}
+
+.member__img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-bottom: 10px;
+}
+
+.member__name {
+    margin-bottom: 5px;
+}
+
+.afisha__troupe-member {
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 @media screen and (min-width: 1500px) {
