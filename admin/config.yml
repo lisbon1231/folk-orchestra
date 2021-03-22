@@ -30,12 +30,12 @@ collections:
     name: "Events" 
     folder: "content/events"
     create: true
-    fields: 
+    fields:
     - { label: "Название", name: "title", widget: "string"}
     - { label: "Короткое описание", name: "short_description", widget: "markdown" }
     - { label: "Подробное Описание", name: "full_description", widget: "markdown" }
     - { label: "Место проведения", name: "place", widget: "string" }
-    - { label: "Дата", name: "date", widget: "datetime", date_format: "DD / MM / YYYY", time_format: "", format: "DD dddd gggg" }
+    - { label: "Дата", name: "_date", widget: "datetime", date_format: "DD / MM / YYYY", time_format: "", format: "DD dddd gggg" }
     - { label: "Время", name: "time", widget: "datetime", date_format: "", time_format: "HH : mm", format: "HH:mm" }
     - { label: "Афиша", name: "poster", widget: "image", allow_multiple: false, media_folder: "posters" }
     - { label: "Продолжительность", name: "duration", widget: "number", value_type: "float"}
@@ -56,7 +56,7 @@ collections:
       name: "событие",
       widget: "relation",
       collection: "Events",
-      search_fields: ["title", "short_description", "full_description", "place"],
-      value_field: "title",
+      search_fields: ["title"],
+      value_field: "_date",
       display_fields: ["title"]
     }    
