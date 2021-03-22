@@ -11,6 +11,8 @@ collections:
     create: true
     slug: "{{fields.name}}_{{fields.role}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+    - { label: "Коллекция", name: "collection", widget: "hidden", default: "members"}
+    - { label: "Шаблон", name: "layout", widget: "hidden", default: "members"}
     - { label: "Имя", name: "name", widget: "string"}
     - { label: "Инструмент", name: "instrument", widget: "select", options: ["guitar", "violen", "balalaika"], multiple: true }
     - { label: "Роль", name: "role", widget: "select", options: ["conductor", "musician"], default: "musician", multiple: false }
@@ -32,6 +34,7 @@ collections:
     folder: "content/bands"
     create: true
     fields:
+    - { label: "Коллекция", name: "collection", widget: "hidden", default: "bands"}
     - { label: "Название", name: "name", widget: "string"}
     - { 
       label: "Состав",
@@ -49,6 +52,8 @@ collections:
     folder: "content/events"
     create: true
     fields:
+    - { label: "Коллекция", name: "collection", widget: "hidden", default: "events"}
+    - { label: "Шаблон", name: "layout", widget: "hidden", default: "event"}
     - { label: "Название", name: "title", widget: "string"}
     - { label: "Короткое описание", name: "short_description", widget: "markdown" }
     - { label: "Подробное Описание", name: "full_description", widget: "markdown" }
@@ -74,6 +79,8 @@ collections:
     create: true
     slug: "info"
     fields: 
+    - { label: "Коллекция", name: "collection", widget: "hidden", default: "info"}
+    - { label: "Шаблон", name: "layout", widget: "hidden", default: "main"}
     - { label: "Название", name: "title", widget: "string"}
     - { label: "Краткое описание", name: "short_description", widget: "string" }
     - { label: "Среднее описание", name: "middle_description", widget: "markdown" }
