@@ -1,164 +1,134 @@
----
-title: My Rad Blog
----
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../../static/typo.css" rel="stylesheet" ></link>
     <link href="../../../../static/styles.css" rel="stylesheet" ></link>
-
     {# <title>{{ info.data.title }}</title> #}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
   </head>
   <body class="page">
-    <header class="header">
-      <div class="logo"></div>
-      <nav class="header__nav">
-        <ul class="header__list">
-          <li class="header__nav-item">Афиша</li>
-          <li class="header__nav-item">Галлерея</li>
-          <li class="header__nav-item">Новости</li>
-          <li class="header__nav-item">Состав</li>
-          <li class="header__nav-item">История</li>
-          <li class="header__nav-item">Контакты</li>
-        </ul>
-      </nav>
-    </header>
-    {%- for info in collections.info -%}
-      <div class="banner">
-        <div class="banner__text">
-          <h1 class="banner__title">{{ info.data.title }}</h1>
-          <p class="banner__slogan">{{ info.data.short_description}}</p>
-        </div>
-      </div>
-      <div class="intro limiter">
-        <p class="intro__main-text">{{ info.data.middle_description}}</p>
-        <a class="intro__link-details" href="#">Подробнее</a>
-      </div>
-    {%- endfor -%}
-    <div class="section">
-      <h2 class="section__title limiter title">Ближайшие концерты</h2>
-      <ul class="upcomming">
-        {# {%- for event in collections.events -%}
-          <li class="upcomming__item">
-            <div class="upcomming__info">
-              <span class="upcomming__date">{{ event.data.date2 }}</span>
-              <h3 class="upcomming__title">{{ event.data.title }}</h3>
-              <p class="upcomming__description">
-                {{ event.data.short_description }}
-              </p>
-              <span class="upcomming__entrance">
-                {% if not event.data.price %} Вход свободный {% endif %}
-              </span>
-            </div>
+    <div class="page__content">
+      {% include "./blocks/header.njk" %}
+      {# <div class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link">Афиша</a>
           </li>
-        {%- endfor -%} #}
-        <li class="upcomming__item">
-          <div class="upcomming__info">
-            <span class="upcomming__date">28 декабря 19:00</span>
-            <h3 class="upcomming__title">Метель</h3>
-            <p class="upcomming__description">
-                Музыкальные иллюстрации к повести Пушкина. 
-              </p>
-            <span class="upcomming__entrance">Вход свободный</span>
-            <a href="#" class="upcomming__link">Подробнее</a>
-          </div>
-        </li>
-        <li class="upcomming__item">
-          <div class="upcomming__info">
-            <span class="upcomming__date">30 ноября 18:00</span>
-            <h3 class="upcomming__title">Воспоминание о вальсе</h3>
-            <p class="upcomming__description">
-                Популярные старинные вальсы 20-го века (Джойса, Кюсса, Андреева и других)
-              </p>
-            <span class="upcomming__entrance">Вход свободный</span>
-            <a href="#" class="upcomming__link">Подробнее</a>
-          </div>
-        </li>
-        <li class="upcomming__item">
-          <div class="upcomming__info">
-            <span class="upcomming__date">30 июня 13:00</span>
-            <h3 class="upcomming__title">День балалайки</h3>
-            <p class="upcomming__description">
-                Музыка солнечной долины
-              </p>
-            <span class="upcomming__entrance">Вход свободный</span>
-            <a href="#" class="upcomming__link">Подробнее</a>
-          </div>
-        </li>
-        <li class="upcomming__item">
-          <div class="upcomming__info">
-            <span class="upcomming__date">29 марта 18:00</span>
-            <h3 class="upcomming__title">9 лет оркестру</h3>
-            <p class="upcomming__description">
-                Концерт в честь 5-летия воссоединения Крыма с Россией
-              </p>
-            <span class="upcomming__entrance">Вход свободный</span>
-            <a href="#" class="upcomming__link">Подробнее</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2 class="section__title limiter title">Новости</h2>
-      <ul class="news">
-        <li class="news__item">
-          <img src="../../../../static/uploads/bla.jpeg" class="news__img">
-          <div class="news__desciption">
-            <h3 class="news__title">Оркестр им.Г.Шендерева исполнит Гимн России на стадионе «Газпром-Арена»</h3>
-            <p class="news__text">1 сентября 2019 года артисты оркестра русских народных инструментов им.Г.Шендерева примут участие в общенациональной акции - массовом исполнении гимна в составе сводного симфонического оркестра из 10 тысяч музыкантов, участников творческих коллективов...</p>
-            <ul class="news__links">
-              <li class="news__link-item">
-                <p class="news__link-text">Читать дальше</p>
-                <a class="news__link">mysupersite.io/articles/12842</a>
-              </li>
-              <li class="news__link-item">
-                <p class="news__link-text">Источник</p>
-                <a class="news__link">astrograph.io</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="news__item news__item_right">
-          <img src="../../../../static/uploads/bla3.jpeg" class="news__img">
-          <div class="news__desciption">
-            <h3 class="news__title">Начался приём заявок в российскую музыкальную базу данных и карту МузGIS.</h3>
-            <p class="news__text">Заносится (бесплатно) информация о вашей деятельности и услугах, которой пользуются заказчики, продюсеры и организаторы мероприятий.</p>
-            <p class="news__text">Если вы пожелаете воспользоваться этой возможностью, буду ждать вашего ответа!</p>
-            <ul class="news__links">
-              <li class="news__link-item">
-                <p class="news__link-text">Читать дальше</p>
-                <a class="news__link">mysupersite.io/articles/12842</a>
-              </li>
-              <li class="news__link-item">
-                <p class="news__link-text">Источник</p>
-                <a class="news__link">astrograph.io</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <footer class="footer">
-      <ul class="footer__links">
-        <li class="footer__link-item">
-          <a class="footer__link footer__link_theme_vk"></a>
-        </li>
-        <li class="footer__link-item">
-          <a class="footer__link footer__link_theme_fb"></a>
-        </li>
-        <li class="footer__link-item">
-          <a class="footer__link footer__link_theme_inst"></a>
-        </li>
-        <li class="footer__link-item">
-          <a class="footer__link footer__link_theme_gg"></a>
-        </li>
-      </ul>
-      <p class="footer__copyright">© Крымский оркестр русских народных инструментов им. Г.Г. Шендерева</p>
-    </footer>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link">{{title}}</a>
+          </li>
+        </ul>
+      </div> #}
 
+      <div class="afisha">
+        <div class="afisha__banner" style="background-image: url('../../../../content/events/{{banner}}')">
+          <div class="afisha__tags">
+            <ul class="afisha__tags-list">
+              <li class="afisha__tag typo typo_theme_tags">Волынка</li>
+              <li class="afisha__tag typo typo_theme_tags">Скрипка</li>
+              <li class="afisha__tag typo typo_theme_tags">Виолончель</li>
+              <li class="afisha__tag typo typo_theme_tags">Контрабас</li>
+              <li class="afisha__tag typo typo_theme_tags">Вокал</li>
+              <li class="afisha__tag typo typo_theme_tags">Хор</li>
+              <li class="afisha__tag typo typo_theme_tags">Оркестр</li>
+              <li class="afisha__tag typo typo_theme_tags">Классика</li>
+            </ul>
+          </div>
+          <div class="afisha__banner-info">
+            <h1 class="afisha__title typo typo_theme_major">{{title}}</h1>
+            <h1 class="afisha__short-description typo typo_theme_plain">{{short_description}}</h1>
+            <p class="afisha__datetime typo typo_theme_small">
+              <span class="afisha__date">{{date2}},</span>
+              <span class="afisha__time">{{time}}</span>
+            </p>
+          </div>
+        </div>
+        <section class="afisha__section section">
+          <div class="afisha__container">
+            <p class="afisha__full-description typo typo_theme_plain">{{full_description}}</p>
+          </div>
+          <section class="section afisha__row">
+            <div class="afisha__container">
+              <div class="afisha__info">
+                <ul class="afisha__info-list">
+                  <li class="afisha__info-list-item">
+                    <h4 class="afisha__info-list-item-title">Дата и время </h4>
+                    <span class="afisha__info-list-item-text typo typo_theme_accent">{{date2}}, {{time}}</span>
+                  </li>
+                  <li class="afisha__info-list-item">
+                    <h4 class="afisha__info-list-item-title">Место</h4>
+                    <a class="afisha__info-list-item-text typo typo_theme_accent link">
+                      {{place}}
+                    </a>
+                  </li>
+                  <li class="afisha__info-list-item">
+                    <h4 class="afisha__info-list-item-title">Длительность</h4>
+                    <span class="afisha__info-list-item-text typo typo_theme_accent">{{duration}} минут</span>
+                  </li>
+                  <li class="afisha__info-list-item">
+                    <h4 class="afisha__info-list-item-title">Возраст</h4>
+                    <span class="afisha__info-list-item-text typo typo_theme_accent">{{age}}+</span>
+                  </li>
+                  <li class="afisha__info-list-item">
+                    <h4 class="afisha__info-list-item-title">Вход</h4>
+                    <span class="afisha__info-list-item-text typo typo_theme_accent">Бесплатный</span>
+                  </li>
+                </ul>
+                <img class="afisha__afisha" src="../../../../content/events/{{poster}}"/>
+              </div>
+            </div>
+          </section>
+          <section class="section afisha__container afisha__programm-info">
+            <div class="afisha__repertoire">
+              <h2 class="afisha__subtitle typo typo_theme_subtitle">В программе</h2>
+              <ul class="afisha__repertoire-list">
+                <li class="afisha__repertoire-slot typo typo_theme_plain">П. Карли - П. Мориа «Pardonne-moi ce caprice»</li>
+                <li class="afisha__repertoire-slot typo typo_theme_plain">Дж. Ласт «The Lonely Shepherd»</li>
+                <li class="afisha__repertoire-slot typo typo_theme_plain">Р. Клайдерман «Ballade Pour Adeline»</li>
+                <li class="afisha__repertoire-slot typo typo_theme_plain">С. Никитин – П. Мориа «Под музыку Вивальди»</li>
+                <li class="afisha__repertoire-slot typo typo_theme_plain">Дж. Дассен «Бабье лето» из репертуара оркестра П. Мориа</li>
+                <li class="afisha__repertoire-slot typo typo_theme_plain">Э. Морриконе Тема из к/ф «Профессионал»</li>
+              </ul>
+            </div>
+            <div class="afisha__composers">
+              <h2 class="afisha__subtitle typo typo_theme_subtitle">Композиторы</h2>
+              <ul class="afisha__composers-list">
+                <li class="afisha__composer">
+                  <a class="afisha__composer-link  typo typo_theme_plain link">Мориа Поль</a>
+                </li>
+                <li class="afisha__composer">
+                  <a class="afisha__composer-link  typo typo_theme_plain link">Ласт Джеймс</a>
+                </li>
+                <li class="afisha__composer">
+                  <a class="afisha__composer-link  typo typo_theme_plain link">Ульвеус Бьорн</a>
+                </li>
+                <li class="afisha__composer">
+                  <a class="afisha__composer-link  typo typo_theme_plain link">Андерссон Бенни</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="section afisha__row">
+            <ul class="afisha__troupe">
+              <li class="afisha__troupe-member">
+                <a class="member">
+                  <img src="" class="member__img"/>
+                  <p class="member__name">Екатерина Степанова</p>
+                  <div class="member__instrument">волынка</div>
+                </a>
+              </li>
+              <li class="afisha__troupe-member"></li>
+              <li class="afisha__troupe-member"></li>
+            </ul>
+          </section>
+        </section>
+
+        {# </div> #}
+      </div>
+      {% include "./blocks/footer.njk" %}
+    </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="../../../../static/vendors/slick.min.js"></script>
