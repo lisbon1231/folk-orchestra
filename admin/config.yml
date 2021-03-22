@@ -56,7 +56,7 @@ collections:
       name: "событие",
       widget: "relation",
       collection: "Events",
-      search_fields: ["title", "short_description"],
+      search_fields: ["title", "short_description", "full_description", "place"],
       value_field: "title",
       display_fields: ["title"]
     }    
