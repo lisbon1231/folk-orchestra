@@ -5,7 +5,7 @@ backend:
 media_folder: "static/uploads"
 public_folder: "/uploads"
 collections:
-  - label: "Состав"
+  - label: "Участники"
     name: "Members" 
     folder: "content/members"
     create: true
@@ -13,19 +13,37 @@ collections:
     fields: # The fields for each document, usually in front matter
     - { label: "Имя", name: "name", widget: "string"}
     - { label: "Инструмент", name: "instrument", widget: "select", options: ["guitar", "violen", "balalaika"], multiple: true }
-    - { label: "Роль", name: "role", widget: "select", options: ["conductor", "musician"], default: "musician", multiple: true }
+    - { label: "Роль", name: "role", widget: "select", options: ["conductor", "musician"], default: "musician", multiple: false }
     - { label: "Работает", name: "works", widget: "select", options: ["да", "нет"], default: "да"}
     - { label: "О человеке", name: "history", widget: "markdown" }
     - { label: "Фото", name: "photo", widget: "image", required: false }
-    - label: "Участник"
-      name: "participant"
-      widget: "relation"
-      required: false
-      collection: "Events"
-      value_field: "title"
-      search_fields: ["title", "date"]
-      display_fields: ["{{title}} - {{date}}"]
+    # - label: "Участник"
+    #   name: "participant"
+    #   widget: "relation"
+    #   required: false
+    #   collection: "Events"
+    #   value_field: "title"
+    #   search_fields: ["title", "date"]
+    #   display_fields: ["{{title}} - {{date}}"]
+    #   multiple: true
+
+  - label: "Составы"
+    name: "Bands" 
+    folder: "content/bands"
+    create: true
+    fields:
+    - { label: "Название", name: "name", widget: "string"}
+    - { 
+      label: "Состав",
+      name: "band",
+      widget: "relation",
+      collection: "Members",
+      search_fields: ["name"],
+      value_field: "name",
+      display_fields: ["name"],
       multiple: true
+    }    
+
   - label: "События"
     name: "Events" 
     folder: "content/events"
@@ -40,6 +58,15 @@ collections:
     - { label: "Афиша", name: "poster", widget: "image", allow_multiple: false, media_folder: "posters" }
     - { label: "Продолжительность", name: "duration", widget: "number", value_type: "float"}
     - { label: "Вход платный", name: "price", widget: "boolean"}
+    - {
+      label: "Состав",
+      name: "Band",
+      widget: "relation",
+      collection: "Members",
+      search_fields: ["name"],
+      value_field: "name",
+      display_fields: ["name"]
+    }    
 
   - label: "Про оркестр"
     name: "About"
@@ -51,12 +78,3 @@ collections:
     - { label: "Краткое описание", name: "short_description", widget: "string" }
     - { label: "Среднее описание", name: "middle_description", widget: "markdown" }
     - { label: "Полное описание", name: "long_description", widget: "markdown" }
-    - { 
-      label: "Events",
-      name: "событие",
-      widget: "relation",
-      collection: "Events",
-      search_fields: ["title"],
-      value_field: "_date",
-      display_fields: ["title"]
-    }    
