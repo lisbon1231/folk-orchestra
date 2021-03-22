@@ -122,7 +122,7 @@
                           <img src="../../../../static/{{member.data.photo}}" class="member__img"/>
                           <p class="member__name">{{member.data.name}}</p>
                           <div class="member__instrument typo_theme_light">
-                            {% if member.data.role == "conductor" %}
+                            {% if member.data.role == "Дирижер" or member.data.role == "Солист"%}
                               {{member.data.role}}
                             {% else %}
                               {{member.data.instrument}}

@@ -841,6 +841,8 @@ p.intro__main-text:before {
     height: 100px;
     object-fit: cover;
     border-radius: 100%;
+    margin: 0 auto;
+    display: block;
     margin-bottom: 10px;
 }
 
@@ -851,6 +853,7 @@ p.intro__main-text:before {
 .afisha__troupe-member {
     margin-right: 20px;
     margin-left: 20px;
+    max-width: 120px;
 }
 
 @media screen and (min-width: 1500px) {
