@@ -40,7 +40,7 @@ collections:
     - { label: "Афиша", name: "poster", widget: "image", allow_multiple: false, media_folder: "posters" }
     - { label: "Продолжительность", name: "duration", widget: "number", value_type: "float"}
     - { label: "Вход платный", name: "price", widget: "boolean"}
-  
+
   - label: "Про оркестр"
     name: "About"
     folder: "content/info"
@@ -51,4 +51,12 @@ collections:
     - { label: "Краткое описание", name: "short_description", widget: "string" }
     - { label: "Среднее описание", name: "middle_description", widget: "markdown" }
     - { label: "Полное описание", name: "long_description", widget: "markdown" }
-        
+    - { 
+      label: "Events",
+      name: "событие",
+      widget: "relation",
+      collection: "Events",
+      search_fields: ["title", "short_description"],
+      value_field: "title",
+      display_fields: ["title"]
+    }    
