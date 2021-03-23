@@ -823,6 +823,7 @@ p.intro__main-text:before {
 
 .afisha__programm-info {
     display: flex;
+    justify-content: space-between;
 }
 
 .afisha__composers-list {
