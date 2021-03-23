@@ -3,8 +3,38 @@ backend:
   repo: lisbon1231/folk-orchestra
   branch: main
 media_folder: "static/uploads"
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: lisbon1231
+    api_key: 495568362213653
 public_folder: "/uploads"
 collections:
+  - label: "Альбомы"
+    name: "album" 
+    folder: "content/album"
+    create: true
+    fields:
+    - { label: "Коллекция", name: "tags", widget: "hidden", default: "albums"}
+    - { label: "Шаблон", name: "layout", widget: "hidden", default: "album.njk"}
+    - { 
+      label: "Событие",
+      name: "event",
+      widget: "relation",
+      collection: "Events",
+      search_fields: ["title"],
+      value_field: "title",
+      display_fields: ["title", "_date"],
+      multiple: false
+    }
+    - label: "Media"
+      name: "photos"
+      widget: "image"
+      allow_multiple: true
+      media_library:
+        config:
+          multiple: true
+
   - label: "Участники"
     name: "Members" 
     folder: "content/members"

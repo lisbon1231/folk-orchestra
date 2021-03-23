@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../../static/typo.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles.css" rel="stylesheet" ></link>
+    {# <title>{{ info.data.title }}</title> #}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
+  </head>
+  <body class="page">
+    <div class="page__content">
+
+      {% import "./blocks/header.html" as header %}
+      {{ header.props('Галлерея', true) }}
+      {% set albums2 = [
+        {
+          photo: "8F5VRPw8Uw4.jpeg",
+          title: "Воспоминание о вальсе",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "30.11.19"
+        },
+        {
+          photo: "w_650103bd.jpeg",
+          title: "День города Симферополя",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "5.06.2011"
+        },
+        {
+          photo: "Bftz2daVA5M.jpeg",
+          title: "Концерт в университете МВД",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "11.06.19"
+        },
+        {
+          photo: "zn1fxt80QMA.jpeg",
+          title: "8 лет оркестру",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "23.03.18"
+        },
+        {
+          photo: "R-1XmyJfCrU.jpeg",
+          title: "Новогодний концерт в музее",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "24.12.17"
+        },
+        {
+          photo: "qnCe-NsPbTA.jpeg",
+          title: "Музыка народов Крыма",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "5.11.17"
+        },
+        {
+          photo: "OUBJiRM0y_8.jpeg",
+          title: "Городской фестиваль 'Золотая осень'",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "26.10.17"
+        },
+
+        {
+          photo: "6ilehNkWZ0s.jpeg",
+          title: "80-летие Г.Шендерева.Симферополь",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "30.03.17"
+        },
+        {
+          photo: "PM9wTr71t98.jpeg",
+          title: "Салехард",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "25.02.17"
+        },
+        {
+          photo: "gDelvNsXpps.jpeg",
+          title: "Концерт 'Музыка без границ'",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "19.12.16"
+        },
+        {
+          photo: "iiMlkVsr6zU.jpeg",
+          title: "Ростов",
+          description: "Съешь еще этих мягкий французских булочек да выпей чаю",
+          date: "26.03.15"
+        }
+      ] %}
+      <ul class="gallery">
+        {%- for album in albums2-%}
+          <li class="gallery__item album-preview">
+            <img src="../../../../static/uploads/albums/{{album.photo}}" class="album-preview__picture"/>
+            <div class="album-preview__description">
+              <p class="album-preview__title">{{album.title}}: <span class="album-preview__info">{{album.description}}</span></p>
+              <div class="album-preview__date">{{album.date}}</div>
+            </div>
+          </li>
+        {%- endfor -%}
+        {%- for album in albums2-%}
+          <li class="gallery__item album-preview">
+            <img src="../../../../static/uploads/albums/{{album.photo}}" class="album-preview__picture"/>
+            <div class="album-preview__description">
+              <p class="album-preview__title">{{album.title}}: <span class="album-preview__info">{{album.description}}</span></p>
+              <div class="album-preview__date">{{album.date}}</div>
+            </div>
+          </li>
+        {%- endfor -%}
+        {%- for album in albums2-%}
+          <li class="gallery__item album-preview">
+            <img src="../../../../static/uploads/albums/{{album.photo}}" class="album-preview__picture"/>
+            <div class="album-preview__description">
+              <p class="album-preview__title">{{album.title}}: <span class="album-preview__info">{{album.description}}</span></p>
+              <div class="album-preview__date">{{album.date}}</div>
+            </div>
+          </li>
+        {%- endfor -%}
+        {%- for album in albums2-%}
+          <li class="gallery__item album-preview">
+            <img src="../../../../static/uploads/albums/{{album.photo}}" class="album-preview__picture"/>
+            <div class="album-preview__description">
+              <p class="album-preview__title">{{album.title}}: <span class="album-preview__info">{{album.description}}</span></p>
+              <div class="album-preview__date">{{album.date}}</div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      {% include "./blocks/footer.njk" %}
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  </body>
+</html>
