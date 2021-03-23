@@ -654,6 +654,7 @@ p.intro__main-text:before {
     justify-content: space-between;
     align-items: flex-start;
     padding-top: 3vw;
+    background-size: cover;
 }
 
 

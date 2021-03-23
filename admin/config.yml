@@ -12,7 +12,7 @@ collections:
     slug: "{{fields.name}}_{{fields.role}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
     - { label: "Коллекция", name: "tags", widget: "hidden", default: "members"}
-    - { label: "Шаблон", name: "template", widget: "hidden", default: "members.njk"}
+    - { label: "Шаблон", name: "layout", widget: "hidden", default: "members.njk"}
     - { label: "Имя", name: "name", widget: "string"}
     - { label: "Инструмент", name: "instrument", widget: "select", options: ["Балалайка", "Гитара", "Скрипка", "Волынка", "Контрабас", "Фортепиано"], multiple: true }
     - { label: "Роль", name: "role", widget: "select", options: ["Дирижер", "Музыкант", "Солист"], default: "musician", multiple: false }
@@ -35,7 +35,7 @@ collections:
     create: true
     fields:
     - { label: "Коллекция", name: "tags", widget: "hidden", default: "bands"}
-    - { label: "Шаблон", name: "template", widget: "hidden", default: "bands.njk"}
+    - { label: "Шаблон", name: "layout", widget: "hidden", default: "bands.njk"}
     - { label: "Название", name: "name", widget: "string"}
     - { 
       label: "Состав",
@@ -54,7 +54,7 @@ collections:
     create: true
     fields:
     - { label: "Коллекция", name: "tags", widget: "hidden", default: "events"}
-    - { label: "Шаблон", name: "template", widget: "hidden", default: "event.njk"}
+    - { label: "Шаблон", name: "layout", widget: "hidden", default: "event.njk"}
     - { label: "Название", name: "title", widget: "string"}
     - { label: "Короткое описание", name: "short_description", widget: "markdown" }
     - { label: "Подробное Описание", name: "full_description", widget: "markdown" }
@@ -64,6 +64,10 @@ collections:
     - { label: "Афиша", name: "poster", widget: "image", allow_multiple: false, media_folder: "posters" }
     - { label: "Продолжительность", name: "duration", widget: "number", value_type: "float"}
     - { label: "Вход платный", name: "price", widget: "boolean"}
+    - { label: "Баннер", name: "banner", widget: "image", allow_multiple: false, media_folder: "banner" }
+    # - { label: "Композиторы", name: "composers", widget: "list", allow_add: true, field: {label: tagname, name: tagname, widget: markdown} }
+    # - { label: "Тэги", name: "eventtags", widget: "list", allow_add: true, field: {label: tagname, name: tagname, widget: text} }
+    - { label: "Тэги", name: "eventtags", widget: "list", allow_add: true, min: 2 }
     - {
       label: "Состав",
       name: "band",
