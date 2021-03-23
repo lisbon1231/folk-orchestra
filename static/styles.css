@@ -174,12 +174,17 @@ p.intro__main-text:before {
     transition-duration: .5s;
 }
 
+.header__nav-item_active {
+    background-color: #9fa628;
+    color: #fff;
+}
+
 .header__nav-item:hover {
     cursor: pointer;
     color: white;
 }
 
-.header_fixed .header__nav-item {
+.header_short .header__nav-item {
     line-height: 62px;
 }
 
@@ -637,7 +642,7 @@ p.intro__main-text:before {
 .afisha__banner {
     height: 33.25vw;
     padding-left: 20vw;
-    padding-bottom: 5vw;
+    padding-bottom: 3vw;
     display: flex;
     align-items: flex-end;
     padding-right: 3vw;
@@ -650,6 +655,8 @@ p.intro__main-text:before {
     align-items: flex-start;
     padding-top: 3vw;
 }
+
+
 
 .afisha__banner:after {
     position: absolute;
@@ -699,6 +706,7 @@ p.intro__main-text:before {
 
 .afisha__datetime {
     color: #bf6c35;
+    margin-bottom: 20px;
 }
 
 .afisha__container {
@@ -724,13 +732,35 @@ p.intro__main-text:before {
 }
 
 .afisha__afisha {
-    width: 140px;
+    width: 200px;
     background: #ff00007d;
     cursor: pointer;
+    transition-duration: .5s;
+    transform: scale(1);
+}
+
+.afisha__afisha:hover {
+    transform: scale(1.02);
 }
 
 .afisha__info-list-item-text {
-    margin-left: 24px;
+    /* margin-left: 24px; */
+    position: relative;
+}
+
+.afisha__info-list-item-text_arrow {
+    padding-right: 20px;
+}
+
+.afisha__info-list-item-text_arrow:after {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    background-image: url('../../../../static/arrow-link.svg');
+    background-size: contain;
+    content: "";
 }
 
 .afisha__info-list-item {
@@ -753,7 +783,7 @@ p.intro__main-text:before {
     width: 200px;
     min-width: 200px;
     text-align: right;
-    
+    margin-right: 24px;
 }
 
 .afisha__info-list {
@@ -776,7 +806,7 @@ p.intro__main-text:before {
 
 .afisha__subtitle {
     font-weight: 600;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .afisha__repertoire-list {
@@ -809,7 +839,6 @@ p.intro__main-text:before {
 }
 
 .afisha__subtitle {
-    margin: 0;
     margin-bottom: 40px;
 }
 
@@ -817,6 +846,7 @@ p.intro__main-text:before {
     color: #9fa628;
     cursor: pointer;
     text-decoration: none;
+    transition-duration: .5s;
 }
 
 .link:hover, .link:visited {
@@ -824,36 +854,123 @@ p.intro__main-text:before {
     color: #9fa628;
 }
 
+.link:hover, .link:focus {
+    opacity: .7;
+    text-decoration: none;
+    outline: none;
+}
+
 .afisha__troupe {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.afisha__button {
+
+}
+
+.button {
+    background: rgb(159, 166, 40);
+    border: none;
+    outline: none;
+    color: #fff;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+
+
+.button:hover, .button:focus {
+    color: #fff;
+    text-decoration: none;
+    opacity: .8;
+}
+
+.button:visited {
+    color: #fff;
+    text-decoration: none;
 }
 
 .member {
     text-align: center;
     cursor: pointer;
+    display: block;
 }
 
 .member__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition-duration: .5s;
+}
+
+.member:hover .member__img {
+    transform: scale(1.1);
+}
+
+.member:hover {
+    opacity: .8;
+}
+
+
+
+.member__img-container {
     width: 100px;
     height: 100px;
-    object-fit: cover;
     border-radius: 100%;
     margin: 0 auto;
-    display: block;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .member__name {
     margin-bottom: 5px;
 }
 
+
 .afisha__troupe-member {
     margin-right: 20px;
     margin-left: 20px;
     max-width: 120px;
+}
+
+.modal {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #00000061;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_open {
+    display: flex;
+}
+
+.modal__close-button {
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    background-image: url('');
+}
+
+.modal__img {
+    height: 80vh;
+    object-fit: contain;
 }
 
 @media screen and (min-width: 1500px) {

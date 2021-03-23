@@ -14,7 +14,9 @@ title: My Rad Blog
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
   </head>
   <body class="page">
-    {% include "./blocks/header.njk" %}
+    {% import "./blocks/header.html" as header %}
+    {{ header.props('', false)}}
+
     {%- for info in collections.info -%}
       <div class="banner">
         <div class="banner__text">

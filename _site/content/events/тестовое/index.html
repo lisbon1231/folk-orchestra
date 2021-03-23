@@ -10,20 +10,31 @@
   </head>
   <body class="page">
     <div class="page__content">
-      <header class="header">
-    <div class="logo"></div>
-    <nav class="header__nav">
-        <ul class="header__list">
-            <li class="header__nav-item">Афиша</li>
-            <li class="header__nav-item">Галлерея</li>
-            <li class="header__nav-item">Новости</li>
-            <li class="header__nav-item">Состав</li>
-            <li class="header__nav-item">История</li>
-            <li class="header__nav-item">Контакты</li>
-        </ul>
-    </nav>
-</header>
+
+
       
+      
+    
+    
+        <header class="header header_fixed">
+        <div class="logo"></div>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                                <li class="header__nav-item header__nav-item_active">Aфиша</li>
+                            
+                                <li class="header__nav-item">Галлерея</li>
+                            
+                                <li class="header__nav-item">Новости</li>
+                            
+                                <li class="header__nav-item">Состав</li>
+                            
+                                <li class="header__nav-item">История</li>
+                            
+                                <li class="header__nav-item">Контакты</li>
+                            </ul>
+                </nav>
+            </header>
+        
 
       <div class="afisha">
         <div class="afisha__banner" style="background-image: url('../../../../content/events/')">
@@ -46,6 +57,7 @@
               <span class="afisha__date">21 Sunday 2021,</span>
               <span class="afisha__time">1157</span>
             </p>
+            
           </div>
         </div>
         <div class="afisha__container">
@@ -61,7 +73,7 @@
                 </li>
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Место</h4>
-                  <a class="afisha__info-list-item-text typo typo_theme_accent link">
+                  <a class="afisha__info-list-item-text afisha__info-list-item-text_arrow typo typo_theme_accent link" href="https://yandex.ru/profile/38238683134" target="_blank">
                     Севастополь
                   </a>
                 </li>
@@ -75,8 +87,13 @@
                 </li>
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Вход</h4>
-                  <span class="afisha__info-list-item-text typo typo_theme_accent">Бесплатный</span>
+                  <span class="afisha__info-list-item-text typo typo_theme_accent">
+                    
+                    Бесплатный
+                  
+                  </span>
                 </li>
+                
               </ul>
               <img class="afisha__afisha" src="../../../../content/events/posters/nrcfeq0ojfq.jpg"/>
             </div>
@@ -112,11 +129,10 @@
             </ul>
           </div>
         </section>
+        <h2 class="afisha__subtitle typo typo_theme_subtitle afisha__container">Состав</h2>
         <section class="section afisha__row">
           <ul class="afisha__troupe"></ul>
         </section>
-
-        
       </div>
       <footer class="footer">
     <ul class="footer__links">
@@ -135,10 +151,16 @@
     </ul>
     <p class="footer__copyright">© Крымский оркестр русских народных инструментов им. Г.Г. Шендерева</p>
 </footer>
+      <div class="modal">
+        <div class="modal__container">
+          <img src="../../../../content/events/posters/nrcfeq0ojfq.jpg" class="modal__img"/>
+        </div>
+      </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script type="text/javascript" src="../../../../static/vendors/slick.min.js"></script>
-    <script type="text/javascript" src="../../../../static/index.js"></script>
+    <script type="text/javascript" src="../../../../static/event.js"></script>
   </body>
 </html>

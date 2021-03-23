@@ -10,20 +10,31 @@
   </head>
   <body class="page">
     <div class="page__content">
-      <header class="header">
-    <div class="logo"></div>
-    <nav class="header__nav">
-        <ul class="header__list">
-            <li class="header__nav-item">Афиша</li>
-            <li class="header__nav-item">Галлерея</li>
-            <li class="header__nav-item">Новости</li>
-            <li class="header__nav-item">Состав</li>
-            <li class="header__nav-item">История</li>
-            <li class="header__nav-item">Контакты</li>
-        </ul>
-    </nav>
-</header>
+
+
       
+      
+    
+    
+        <header class="header header_fixed">
+        <div class="logo"></div>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                                <li class="header__nav-item header__nav-item_active">Aфиша</li>
+                            
+                                <li class="header__nav-item">Галлерея</li>
+                            
+                                <li class="header__nav-item">Новости</li>
+                            
+                                <li class="header__nav-item">Состав</li>
+                            
+                                <li class="header__nav-item">История</li>
+                            
+                                <li class="header__nav-item">Контакты</li>
+                            </ul>
+                </nav>
+            </header>
+        
 
       <div class="afisha">
         <div class="afisha__banner" style="background-image: url('../../../../content/events/banner/metel.jpeg')">
@@ -46,6 +57,9 @@
               <span class="afisha__date">29 Tuesday 2021,</span>
               <span class="afisha__time">1183</span>
             </p>
+            
+              <a class="afisha__button button typo typo_theme_plain">Купить билеты</a>
+            
           </div>
         </div>
         <div class="afisha__container">
@@ -61,7 +75,7 @@
                 </li>
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Место</h4>
-                  <a class="afisha__info-list-item-text typo typo_theme_accent link">
+                  <a class="afisha__info-list-item-text afisha__info-list-item-text_arrow typo typo_theme_accent link" href="https://yandex.ru/profile/38238683134" target="_blank">
                     Центр Эстрадного Искусства
                   </a>
                 </li>
@@ -75,8 +89,18 @@
                 </li>
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Вход</h4>
-                  <span class="afisha__info-list-item-text typo typo_theme_accent">Бесплатный</span>
+                  <span class="afisha__info-list-item-text typo typo_theme_accent">
+                    
+                    Платный
+                  
+                  </span>
                 </li>
+                
+                  <li class="afisha__info-list-item">
+                    <h4 class="afisha__info-list-item-title"></h4>
+                    <a class="afisha__button button typo typo_theme_plain">Купить билеты</a>
+                  </li>
+                
               </ul>
               <img class="afisha__afisha" src="../../../../content/events/posters/8e2rm3svpcc.jpg"/>
             </div>
@@ -112,11 +136,14 @@
             </ul>
           </div>
         </section>
+        <h2 class="afisha__subtitle typo typo_theme_subtitle afisha__container">Состав</h2>
         <section class="section afisha__row">
           <ul class="afisha__troupe">
                       <li class="afisha__troupe-member">
                         <a class="member link typo typo_theme_tags">
-                          <img src="../../../../static//uploads/musician.jpeg" class="member__img"/>
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/musician.jpg" class="member__img"/>
+                          </div>
                           <p class="member__name">Константин Константинопольский</p>
                           <div class="member__instrument typo_theme_light">
                             
@@ -128,7 +155,9 @@
                     
                       <li class="afisha__troupe-member">
                         <a class="member link typo typo_theme_tags">
-                          <img src="../../../../static//uploads/kate.jpeg" class="member__img"/>
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/kate.jpg" class="member__img"/>
+                          </div>
                           <p class="member__name">Катерина Солнышко</p>
                           <div class="member__instrument typo_theme_light">
                             
@@ -140,7 +169,9 @@
                     
                       <li class="afisha__troupe-member">
                         <a class="member link typo typo_theme_tags">
-                          <img src="../../../../static//uploads/blad.jpeg" class="member__img"/>
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/blad.jpg" class="member__img"/>
+                          </div>
                           <p class="member__name">Владислав Зайцев</p>
                           <div class="member__instrument typo_theme_light">
                             
@@ -152,7 +183,9 @@
                     
                       <li class="afisha__troupe-member">
                         <a class="member link typo typo_theme_tags">
-                          <img src="../../../../static//uploads/liza_rrv_4271-r-s”r-s•r-s–m€r-rµm€rўrџ-small_.jpeg" class="member__img"/>
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/liza_rrv_4271-r-s”r-s•r-s–m€r-rµm€rўrџ-small_.jpg" class="member__img"/>
+                          </div>
                           <p class="member__name">Светлана Ильиина</p>
                           <div class="member__instrument typo_theme_light">
                             
@@ -164,7 +197,9 @@
                     
                       <li class="afisha__troupe-member">
                         <a class="member link typo typo_theme_tags">
-                          <img src="../../../../static//uploads/phot.jpeg" class="member__img"/>
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/phot.jpg" class="member__img"/>
+                          </div>
                           <p class="member__name">Станислав Якуц</p>
                           <div class="member__instrument typo_theme_light">
                             
@@ -176,7 +211,9 @@
                     
                       <li class="afisha__troupe-member">
                         <a class="member link typo typo_theme_tags">
-                          <img src="../../../../static//uploads/elena.jpeg" class="member__img"/>
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/elena.jpg" class="member__img"/>
+                          </div>
                           <p class="member__name">Елена Евлеева</p>
                           <div class="member__instrument typo_theme_light">
                             
@@ -188,7 +225,9 @@
                     
                       <li class="afisha__troupe-member">
                         <a class="member link typo typo_theme_tags">
-                          <img src="../../../../static//uploads/anisimov.jpeg" class="member__img"/>
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/anisimov.jpg" class="member__img"/>
+                          </div>
                           <p class="member__name">Петр Смоленский</p>
                           <div class="member__instrument typo_theme_light">
                             
@@ -197,10 +236,50 @@
                           </div>
                         </a>
                       </li>
+                    
+                      <li class="afisha__troupe-member">
+                        <a class="member link typo typo_theme_tags">
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/d7cc6ce4ca2fd81.jpg" class="member__img"/>
+                          </div>
+                          <p class="member__name">Ольга Егорова</p>
+                          <div class="member__instrument typo_theme_light">
+                            
+                              Гитара
+                            
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li class="afisha__troupe-member">
+                        <a class="member link typo typo_theme_tags">
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/scale_1200.jpg" class="member__img"/>
+                          </div>
+                          <p class="member__name">Евгений Грин</p>
+                          <div class="member__instrument typo_theme_light">
+                            
+                              Солист
+                            
+                          </div>
+                        </a>
+                      </li>
+                    
+                      <li class="afisha__troupe-member">
+                        <a class="member link typo typo_theme_tags">
+                          <div class="member__img-container">
+                            <img src="../../../../static//uploads/unnamed.jpg" class="member__img"/>
+                          </div>
+                          <p class="member__name">Андрей Иванов</p>
+                          <div class="member__instrument typo_theme_light">
+                            
+                              Балалайка
+                            
+                          </div>
+                        </a>
+                      </li>
                     </ul>
         </section>
-
-        
       </div>
       <footer class="footer">
     <ul class="footer__links">
@@ -219,10 +298,16 @@
     </ul>
     <p class="footer__copyright">© Крымский оркестр русских народных инструментов им. Г.Г. Шендерева</p>
 </footer>
+      <div class="modal">
+        <div class="modal__container">
+          <img src="../../../../content/events/posters/8e2rm3svpcc.jpg" class="modal__img"/>
+        </div>
+      </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script type="text/javascript" src="../../../../static/vendors/slick.min.js"></script>
-    <script type="text/javascript" src="../../../../static/index.js"></script>
+    <script type="text/javascript" src="../../../../static/event.js"></script>
   </body>
 </html>

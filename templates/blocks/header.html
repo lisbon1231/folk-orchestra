@@ -1,0 +1,28 @@
+{% macro props(activeTab, isFixed) %}
+    {% set tabs = [
+        "Aфиша",
+        "Галлерея",
+        "Новости",
+        "Состав",
+        "История",
+        "Контакты"
+    ] %}
+    {% if isFixed %}
+        <header class="header header_fixed">
+        {% else %}
+            <header class="header">
+            {%- endif -%}
+                <div class="logo"></div>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        {%- for tab in tabs-%}
+                            {% if tab == activeTab %}
+                                <li class="header__nav-item header__nav-item_active">{{tab}}</li>
+                            {% else %}
+                                <li class="header__nav-item">{{tab}}</li>
+                            {% endif %}
+                        {%- endfor -%}
+                    </ul>
+                </nav>
+            </header>
+        {% endmacro %}

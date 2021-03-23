@@ -15,19 +15,14 @@ const slickOpts = {
 $(document).ready(function () {
     const title = document.querySelector('.banner__title');
     const header = document.querySelector('.header');
-
-    // $('.upcomming').slick({
-    //     infinite: false,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     dots: true
-    // });
-
+    
     $(window).scroll(function () {
         if (!isElementBelow(title, 100)) {
             header.classList.add('header_fixed')
+            header.classList.add('header_short')
         } else {
             header.classList.remove('header_fixed')
+            header.classList.remove('header_short')
         }
     });
 });
