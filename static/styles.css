@@ -746,14 +746,15 @@ p.intro__main-text:before {
 
 .afisha__info-list-item-text {
     /* margin-left: 24px; */
-    position: relative;
 }
 
-.afisha__info-list-item-text_arrow {
+.afisha__info-list-item-text-arrow {
     padding-right: 20px;
+    position: relative;
+
 }
 
-.afisha__info-list-item-text_arrow:after {
+.afisha__info-list-item-text-arrow:after {
     position: absolute;
     right: 0;
     top: 7px;

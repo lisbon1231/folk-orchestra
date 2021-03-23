@@ -65,9 +65,8 @@ collections:
     - { label: "Продолжительность", name: "duration", widget: "number", value_type: "float"}
     - { label: "Вход платный", name: "price", widget: "boolean"}
     - { label: "Баннер", name: "banner", widget: "image", allow_multiple: false, media_folder: "banner" }
-    # - { label: "Композиторы", name: "composers", widget: "list", allow_add: true, field: {label: tagname, name: tagname, widget: markdown} }
-    # - { label: "Тэги", name: "eventtags", widget: "list", allow_add: true, field: {label: tagname, name: tagname, widget: text} }
-    - { label: "Тэги", name: "eventtags", widget: "list", allow_add: true, min: 2 }
+    - { label: "Репертуар", name: "composers", widget: "list", allow_add: true, field: {label: Произведение, name: composition, widget: text } }
+    - { label: "Тэги", name: "eventtags", widget: "list", allow_add: true }
     - {
       label: "Состав",
       name: "band",

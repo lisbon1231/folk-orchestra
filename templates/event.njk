@@ -19,14 +19,9 @@
         <div class="afisha__banner" style="background-image: url('../../../../content/events/{{banner}}')">
           <div class="afisha__tags">
             <ul class="afisha__tags-list">
-              <li class="afisha__tag typo typo_theme_tags">Волынка</li>
-              <li class="afisha__tag typo typo_theme_tags">Скрипка</li>
-              <li class="afisha__tag typo typo_theme_tags">Виолончель</li>
-              <li class="afisha__tag typo typo_theme_tags">Контрабас</li>
-              <li class="afisha__tag typo typo_theme_tags">Вокал</li>
-              <li class="afisha__tag typo typo_theme_tags">Хор</li>
-              <li class="afisha__tag typo typo_theme_tags">Оркестр</li>
-              <li class="afisha__tag typo typo_theme_tags">Классика</li>
+              {%- for eventtag in eventtags-%}
+                <li class="afisha__tag typo typo_theme_tags">{{eventtag}}</li>      
+              {%- endfor -%}
             </ul>
           </div>
           <div class="afisha__banner-info">
@@ -54,8 +49,9 @@
                 </li>
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Место</h4>
-                  <a class="afisha__info-list-item-text afisha__info-list-item-text_arrow typo typo_theme_accent link" href="https://yandex.ru/profile/38238683134" target="_blank">
+                  <a class="afisha__info-list-item-text typo typo_theme_accent link" href="https://yandex.ru/profile/38238683134" target="_blank">
                     {{place}}
+                    <span class="afisha__info-list-item-text-arrow"></span>
                   </a>
                 </li>
                 <li class="afisha__info-list-item">
