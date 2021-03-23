@@ -762,7 +762,7 @@ p.intro__main-text:before {
     top: 7px;
     width: 15px;
     height: 15px;
-    background-image: url('../../../../static/arrow-link.svg');
+    background-image: url('./arrow-link.svg');
     background-size: contain;
     content: "";
 }
