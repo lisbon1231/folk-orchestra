@@ -201,6 +201,7 @@ p.intro__main-text:before {
     font-size: 24px;
     padding: 0;
     color: #7b7b7b;
+    box-sizing: border-box;
 }
 
 .header__nav-item {
@@ -223,6 +224,7 @@ p.intro__main-text:before {
     display: flex;
     padding: 0;
     margin-top: 0;
+    box-sizing: border-box;
 }
 
 .upcomming__item {
@@ -255,6 +257,7 @@ p.intro__main-text:before {
 .section {
     padding-top: 44px;
     padding-bottom: 44px;
+    box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -456,6 +459,7 @@ p.intro__main-text:before {
 
 .news {
         padding: 0;
+        box-sizing: border-box;
     margin: 0;
     list-style: none;
     display: flex;
@@ -475,6 +479,7 @@ p.intro__main-text:before {
 .news__title {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-size: 24px;
     font-weight: 600;
     line-height: 40px;
@@ -521,6 +526,7 @@ p.intro__main-text:before {
 .news__links {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
     margin-top: 44px;
 }
@@ -562,6 +568,7 @@ p.intro__main-text:before {
 .footer__links {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
     display: flex;
 }
@@ -620,6 +627,7 @@ p.intro__main-text:before {
     left: 0;
     width: 200%;
     padding-top: 200%;
+    box-sizing: border-box;
     top: -50%;
     left: -50%;
     background: radial-gradient(circle at center,rgb(255 255 255/20%) 2%,rgb(255 255 255/6%) 40%,rgb(255 255 255/3%) 50%,rgb(255 255 255/1%) 60%,rgba(0, 0, 0, 0) 70%);
@@ -637,6 +645,7 @@ p.intro__main-text:before {
 
 .page__content {
     padding-top: 96px;
+    box-sizing: border-box;
 }
 
 .afisha__banner {
@@ -655,6 +664,7 @@ p.intro__main-text:before {
     align-items: flex-start;
     padding-top: 3vw;
     background-size: cover;
+    box-sizing: border-box;
 }
 
 
@@ -678,6 +688,7 @@ p.intro__main-text:before {
 .afisha__tags-list {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     display: flex;
     list-style: none;
     margin-left: auto;
@@ -690,6 +701,7 @@ p.intro__main-text:before {
     margin-left: 20px;
     margin-bottom: 10px;
     padding: 2px 10px;
+    box-sizing: border-box;
     background: white;
     box-shadow: 2px 2px 0px 1px #0000000a;
     color: #7b7b7b;
@@ -752,6 +764,7 @@ p.intro__main-text:before {
 
 .afisha__info-list-item-text-arrow {
     padding-right: 20px;
+    box-sizing: border-box;
     position: relative;
 
 }
@@ -793,6 +806,7 @@ p.intro__main-text:before {
 .afisha__info-list {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
 }
 
@@ -803,6 +817,7 @@ p.intro__main-text:before {
 .afisha__full-description {
     margin: 0;
     padding-bottom: 44px;
+    box-sizing: border-box;
     padding-top: 88px;
     /* border-bottom: 1px solid #7b7b7b; */
     margin-bottom: 44px;
@@ -815,6 +830,7 @@ p.intro__main-text:before {
 
 .afisha__repertoire-list {
     padding: 0;
+    box-sizing: border-box;
     margin: 0;
     list-style: none;
 }
@@ -831,6 +847,7 @@ p.intro__main-text:before {
 .afisha__composers-list {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
 }
 
@@ -870,6 +887,7 @@ p.intro__main-text:before {
     display: flex;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     overflow: hidden;
     justify-content: center;
 }
@@ -887,6 +905,7 @@ p.intro__main-text:before {
     padding-left: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
+    box-sizing: border-box;
     display: inline-block;
     cursor: pointer;
     transition-duration: .5s;
@@ -980,6 +999,7 @@ p.intro__main-text:before {
 
 .gallery {
     padding: 0;
+    box-sizing: border-box;
     margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1029,6 +1049,7 @@ p.intro__main-text:before {
     background: #ffffffc7;
     width: 60%;
     padding: 20px;
+    box-sizing: border-box;
     margin-bottom: 20px;
     margin-left: 20px;
 }
@@ -1041,6 +1062,7 @@ p.intro__main-text:before {
     align-items: center;
     justify-content: space-between;
     padding: 30px;
+    box-sizing: border-box;
 }
 
 .gallery__item:nth-child(5n + 1) .album-preview__picture,
@@ -1149,6 +1171,7 @@ p.intro__main-text:before {
     padding: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
+    box-sizing: border-box;
 }
 
 
@@ -1176,6 +1199,7 @@ p.intro__main-text:before {
     background: #ffffffc7;
     width: 60%;
     padding: 20px;
+    box-sizing: border-box;
     margin-bottom: 20px;
     margin-left: 20px;
 }
