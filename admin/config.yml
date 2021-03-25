@@ -111,11 +111,13 @@ collections:
     name: "About"
     folder: "content/info"
     create: true
-    slug: "info"
+    slug: "{{fields.id}}"
     fields: 
+    - { name: id, label: Id, widget: generateId }
     - { label: "Коллекция", name: "tags", widget: "hidden", default: "info"}
     - { label: "Шаблон", name: "layout", widget: "hidden", default: "main"}
     - { label: "Название", name: "title", widget: "string"}
     - { label: "Краткое описание", name: "short_description", widget: "string" }
     - { label: "Среднее описание", name: "middle_description", widget: "markdown" }
     - { label: "Полное описание", name: "long_description", widget: "markdown" }
+    
