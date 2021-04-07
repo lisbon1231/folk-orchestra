@@ -1283,7 +1283,7 @@ p.intro__main-text:before {
 }
 
 .event-preview:nth-child(2n) .event-preview__description {
-    padding-right: 20%;
+    padding-right: 10%;
     padding-left: 40px;
     text-align: left;
     background: linear-gradient(90deg, #ffffff 40%, transparent);
@@ -1370,6 +1370,10 @@ p.intro__main-text:before {
     top: 3vw;
     left: 20vw;
     z-index: 2;
+}
+
+.event-preview__link {
+    height: 100%;
 }
 
 /* background-image: url(./arrows/arrow_black.svg); */
