@@ -64,7 +64,7 @@
                         {% else %}
                             <li class="event-preview event-preview_past">
                             {% endif %}
-                            <a class="event-preview__link">
+                            <a class="event-preview__link" href="./{{event.data.id}}">
                                 <img src="../../../content/events/{{event.data.banner}}" class="event-preview__picture"/>
                                 <div class="event-preview__description">
                                     <h3 class="event-preview__title typo typo_theme_plain">{{event.data.title}}</h3>

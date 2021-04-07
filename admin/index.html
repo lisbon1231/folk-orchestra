@@ -9,25 +9,26 @@
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script>
-    console.log('!!')
+      console.log('!!')
 
-    
       var IdControl = createClass({
-        handleChange: function(e) {
+        handleChange: function (e) {
           //const separator = this.props.field.get('separator', ', ')
-          
+
         },
 
-        componentDidMount: function() {
-            this.id = this.props.value || 'bla'+Math.floor(Math.random()*10000000000)
-            this.props.onChange(this.id);
+        componentDidMount: function () {
+          this.id = this.props.value || '' + Math.floor(Math.random() * 10000000000)
+          this
+            .props
+            .onChange(this.id);
         },
 
         render: function () {
           //console.log('this.props', this.props)
           //console.log('this.props.value', this.props.value)
-          
-        /*
+
+          /*
           const separator = this
             .props
             .field
@@ -39,14 +40,16 @@
             className: this.props.classNameWrapper,
             type: 'text',
             disabled: true,
-            style:{color: '#cdcdcd'},
+            style: {
+              color: '#cdcdcd'
+            },
             value: this.props.value,
             default: this.id,
             onChange: this.handleChange
           });
         }
       });
-/*
+      /*
       var CategoriesPreview = createClass({
         render: function () {
           return h('ul', {}, this.props.value.map(function (val, index) {
@@ -65,7 +68,7 @@
         }
       }
 */
-      CMS.registerWidget('generateId', IdControl)//, CategoriesPreview, schema);
+      CMS.registerWidget('generateId', IdControl) //, CategoriesPreview, schema);
     </script>
   </body>
 </html>

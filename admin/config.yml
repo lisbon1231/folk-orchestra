@@ -134,6 +134,7 @@ collections:
     name: "Events"
     folder: "content/events"
     create: true
+    slug: "{{fields.id}}"
     fields:
       - { name: id, label: Id, widget: generateId }
       - {
