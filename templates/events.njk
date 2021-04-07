@@ -37,7 +37,7 @@
                             <a class="afisha__button button typo typo_theme_plain">Купить билеты</a>
                         {% endif %}
                     </div>
-                    <span class="afisha__nearest typo typo_theme_accent">Близжайшее</span>
+                    <span class="afisha__nearest typo typo_theme_accent">Ближайшее</span>
                 </div>
             </div>
 
@@ -70,9 +70,8 @@
                                     <h3 class="event-preview__title typo typo_theme_plain">{{event.data.title}}</h3>
                                     <p class="event-preview__info">{{event.data.short_description}}</p>
                                     <p class="event-preview__info typo typo_theme_light">{{event.data.place}}</p>
-
                                     {% if event.data.price %}
-                                        <a class="afisha__button button typo typo_theme_tags">Купить билеты</a>
+                                        <div class="afisha__button button typo typo_theme_tags">Купить билеты</div>
                                     {% endif %}
                                 </div>
                                 <div class="event-preview__date">{{event.data._date}}, 19:00</div>
