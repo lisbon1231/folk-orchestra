@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../../../static/typo.css" rel="stylesheet" ></link>
+        <link href="../../../../static/styles.css" rel="stylesheet" ></link>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
+    </head>
+    <body class="page">
+        <div class="page__content">
+
+            {% import "./blocks/header.html" as header %}
+            {{ header.props('Aфиша', true) }}
+
+            {# {% set inhonorCol = collections.inhonor %} #}
+            {# {%- for inhonor in inhonorCol-%}
+                bla
+                    <div class="afisha__tag typo typo_theme_tags">{{inhonor.testF}}</div>
+                {%- endfor -%} #}
+
+            <section class="limiter section page__section typo typo_theme_plain about limiter_small">
+                {{ content | safe }}
+            </section>
+
+            {# {%- for info in collections.inhonor -%}
+                <h1 class="banner__title typo typo_theme_major">{{ info.data.history }}</h1>
+            {%- endfor -%} #}
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../../../../static/vendors/slick.min.js"></script>
+    </body>
+</html>

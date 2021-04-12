@@ -3,11 +3,13 @@ backend:
   repo: lisbon1231/folk-orchestra
   branch: main
 media_folder: "static/uploads"
+# publish_mode: editorial_workflow
 media_library:
   name: cloudinary
   config:
     cloud_name: lisbon1231
     api_key: 495568362213653
+    multiple: true
 public_folder: "/uploads"
 collections:
   - label: "Альбомы"
@@ -241,3 +243,13 @@ collections:
           name: "long_description",
           widget: "markdown",
         }
+  - label: "В честь"
+    name: "inhonor"
+    folder: "content/inhonor"
+    create: true
+    slug: "{{fields.id}}"
+    fields:
+      - { name: id, label: Id, widget: generateId }
+      - { label: "О человеке", name: "body", widget: "markdown" }
+      - { label: "Цитаты", name: "quotes", widget: "string" }
+      - { label: "Картинки", name: "images", widget: "image", allow_multiple: true }
