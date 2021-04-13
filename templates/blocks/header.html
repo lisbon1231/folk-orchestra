@@ -17,9 +17,13 @@
                     <ul class="header__list">
                         {%- for tab in tabs-%}
                             {% if tab.text == activeTab %}
-                                <li class="header__nav-item header__nav-item_active">{{tab.text}}</li>
+                                <li class="header__nav-item header__nav-item_active">
+                                    <a class="header__link" href="{{tab.link}}">{{tab.text}}</a>
+                                </li>
                             {% else %}
-                                <li class="header__nav-item">{{tab.text}}</li>
+                                <li class="header__nav-item">
+                                    <a class="header__link" href="{{tab.link}}">{{tab.text}}</a>
+                                </li>
                             {% endif %}
                         {%- endfor -%}
                     </ul>

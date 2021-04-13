@@ -262,5 +262,7 @@ collections:
     slug: "history"
     fields:
       - { name: id, label: Id, widget: generateId }
+      - { label: "Коллекция", name: "tags", widget: "hidden", default: "history" }
+      - { label: "Шаблон", name: "layout", widget: "hidden", default: "article.njk" }
       - { label: "История", name: "body", widget: "markdown" }
       - { label: "Картинки", name: "images", widget: "image", allow_multiple: true }

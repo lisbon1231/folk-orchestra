@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../../../../static/typo.css" rel="stylesheet" ></link>
-        <link href="../../../../static/styles.css" rel="stylesheet" ></link>
+        <link href="/static/typo.css" rel="stylesheet" ></link>
+        <link href="/static/styles.css" rel="stylesheet" ></link>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
     </head>
     <body class="page">
@@ -13,28 +13,28 @@
             {% import "./blocks/header.html" as header %}
             {{ header.props('История', true) }}
 
-            {% set inhonorCol = collections.inhonor %}
-            {%- for inhonor in inhonorCol-%}
-
-                <section class="section typo typo_theme_plain article">
-                    <div class="limiter limiter_small">
-                        <h1 class="article__title ">{{inhonor.data.title}}</h1>
-                        <img src="../../../../content/inhonor/{{inhonor.data.mainphoto}}" class="article__main-illustration">
-                        {{ content | safe }}
-                    </div>
+            {% set inhonorCol = collections.article %}
+            <section class="section typo typo_theme_plain article">
+                <div class="limiter limiter_small">
+                    <h1 class="article__title ">{{title}}</h1>
+                    <img src="/content/history/{{mainphoto}}" class="article__main-illustration">
+                    {{ content | safe }}
+                </div>
+                {% if quotes %}
                     <div class="article__quote">
-                        <blockquote class="limiter limiter_small">"{{inhonor.data.quotes}}"</blockquote>
+                        <blockquote class="limiter limiter_small">"{{quotes}}"</blockquote>
                     </div>
-
+                {% endif %}
+                {% if images %}
                     <ul class="article__images-list limiter limiter_small">
-                        {%- for image in inhonor.data.images-%}
+                        {%- for image in images-%}
                             <li class="article__images-item">
-                                <img src="../../../../content/inhonor/{{image}}" class="article__image"/>
+                                <img src="/content/history/{{image}}" class="article__image"/>
                             </li>
                         {%- endfor -%}
                     </ul>
-                </section>
-            {%- endfor -%}
+                {% endif %}
+            </section>
             {% include "./blocks/footer.njk" %}
         </div>
         <div class="modal">

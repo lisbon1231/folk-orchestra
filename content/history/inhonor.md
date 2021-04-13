@@ -1,13 +1,16 @@
 ---
 id: "7667483501"
-title: Георгий Шендерёв
-mainphoto:
-  - https://res.cloudinary.com/lisbon1231/image/upload/v1618246572/%D0%96%D0%9E%D0%A0%D0%9D%D0%AF%D0%9A_%D0%9D.%D0%92._tkpn9w.jpg
-quotes: Н.В. Жорняку обязан тем, что стал композитором. Он же привил мне
-  любовь   к русскому оркестру и, главное, определил начало. Очень важное имя в
-  моей  творческой биографии
+layout: article.njk
+tags: "article"
+title: "Георгий Шендерёв"
+quotes: Н.В. Жорняку обязан тем, что стал композитором. Он же привил мне любовь
+  к русскому оркестру и, главное, определил начало. Очень важное имя в моей
+  творческой биографии
+mainphoto: photos/shenderev.bmp
 images:
-  - https://res.cloudinary.com/lisbon1231/image/upload/v1618246579/%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B8%CC%86_%D0%A8%D0%B5%D0%BD%D0%B4%D0%B5%D1%80%D0%B5%CC%88%D0%B2_xsijan.bmp
+  - photos/jornyak.jpg
+  - photos/group.jpg
+  - photos/chaikin.jpg
 ---
 Творчество композитора Георгия Шендерева (1937-1984) неразрывно связано с Крымом. 
 
