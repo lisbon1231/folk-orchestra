@@ -5,24 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/static/typo.css" rel="stylesheet" ></link>
         <link href="/static/styles.css" rel="stylesheet" ></link>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
     </head>
     <body class="page">
         <div class="page__content">
-
             {% import "./blocks/header.html" as header %}
             {{ header.props('История', true) }}
-
             {% set inhonorCol = collections.article %}
             <section class="section typo typo_theme_plain article">
                 <div class="limiter limiter_small">
-                {% if title %}
-                    <h1 class="article__title typo typo_theme_subtitle">{{title}}</h1>
-                {% endif %}
-                {% if mainphoto %}
-                    <img src="/content/history/{{mainphoto}}" class="article__main-illustration">
-                {% endif %}
-                <div class="article__content">{{ content | safe }}</div>
+                    {% if title %}
+                        <h1 class="article__title typo typo_theme_subtitle">{{title}}</h1>
+                    {% endif %}
+                    {% if mainphoto %}
+                        <img src="/static/{{mainphoto}}" class="article__main-illustration">
+                    {% endif %}
+                    <div class="article__content">{{ content | safe }}</div>
                 </div>
                 {% if quotes %}
                     <div class="article__quote">
@@ -33,7 +30,7 @@
                     <ul class="article__images-list limiter limiter_small">
                         {%- for image in images-%}
                             <li class="article__images-item">
-                                <img src="/content/history/{{image}}" class="article__image"/>
+                                <img src="/static/{{image}}" class="article__image"/>
                             </li>
                         {%- endfor -%}
                     </ul>
@@ -46,10 +43,6 @@
                 <img src="" class="modal__img"/>
             </div>
         </div>
-
-        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="../../../../static/vendors/slick.min.js"></script>
         <script src="../../../../static/article.js"></script>
     </body>
 </html>
