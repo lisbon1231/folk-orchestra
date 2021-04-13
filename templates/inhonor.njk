@@ -11,25 +11,41 @@
         <div class="page__content">
 
             {% import "./blocks/header.html" as header %}
-            {{ header.props('Aфиша', true) }}
+            {{ header.props('История', true) }}
 
-            {# {% set inhonorCol = collections.inhonor %} #}
-            {# {%- for inhonor in inhonorCol-%}
-                bla
-                    <div class="afisha__tag typo typo_theme_tags">{{inhonor.testF}}</div>
-                {%- endfor -%} #}
+            {% set inhonorCol = collections.inhonor %}
+            {%- for inhonor in inhonorCol-%}
 
-            <section class="limiter section page__section typo typo_theme_plain about limiter_small">
-                {{ content | safe }}
-            </section>
+                <section class="section typo typo_theme_plain article">
+                    <div class="limiter limiter_small">
+                        <h1 class="article__title ">{{inhonor.data.title}}</h1>
+                        <img src="../../../../content/inhonor/{{inhonor.data.mainphoto}}" class="article__main-illustration">
+                        {{ content | safe }}
+                    </div>
+                    <div class="article__quote">
+                        <blockquote class="limiter limiter_small">"{{inhonor.data.quotes}}"</blockquote>
+                    </div>
 
-            {# {%- for info in collections.inhonor -%}
-                <h1 class="banner__title typo typo_theme_major">{{ info.data.history }}</h1>
-            {%- endfor -%} #}
+                    <ul class="article__images-list limiter limiter_small">
+                        {%- for image in inhonor.data.images-%}
+                            <li class="article__images-item">
+                                <img src="../../../../content/inhonor/{{image}}" class="article__image"/>
+                            </li>
+                        {%- endfor -%}
+                    </ul>
+                </section>
+            {%- endfor -%}
+            {% include "./blocks/footer.njk" %}
+        </div>
+        <div class="modal">
+            <div class="modal__container">
+                <img src="" class="modal__img"/>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="../../../../static/vendors/slick.min.js"></script>
+        <script src="../../../../static/article.js"></script>
     </body>
 </html>
