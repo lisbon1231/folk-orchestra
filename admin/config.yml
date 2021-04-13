@@ -245,11 +245,22 @@ collections:
         }
   - label: "В честь"
     name: "inhonor"
-    folder: "content/inhonor"
+    folder: "content/history"
     create: true
-    slug: "{{fields.id}}"
+    slug: "inhonor"
     fields:
       - { name: id, label: Id, widget: generateId }
+      - { label: "Заголовок", name: "title", widget: "string" }
       - { label: "О человеке", name: "body", widget: "markdown" }
+      - { label: "Главное фото", name: "mainphoto", widget: "image", allow_multiple: false }
       - { label: "Цитаты", name: "quotes", widget: "string" }
+      - { label: "Картинки", name: "images", widget: "image", allow_multiple: true }
+  - label: "История"
+    name: "history"
+    folder: "content"
+    create: true
+    slug: "history"
+    fields:
+      - { name: id, label: Id, widget: generateId }
+      - { label: "История", name: "body", widget: "markdown" }
       - { label: "Картинки", name: "images", widget: "image", allow_multiple: true }

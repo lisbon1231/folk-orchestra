@@ -1,11 +1,11 @@
 {% macro props(activeTab, isFixed) %}
     {% set tabs = [
-        "Aфиша",
-        "Галлерея",
-        "Новости",
-        "Состав",
-        "История",
-        "Контакты"
+        { text: "Aфиша", link: "/events"},
+        { text: "Галлерея", link: "/albums"},
+        { text: "Новости", link: "/news"},
+        { text: "Состав", link: "/members"},
+        { text: "История", link: "/history"},
+        { text: "Контакты", link: "/contacts"}
     ] %}
     {% if isFixed %}
         <header class="header header_fixed">
@@ -16,10 +16,10 @@
                 <nav class="header__nav">
                     <ul class="header__list">
                         {%- for tab in tabs-%}
-                            {% if tab == activeTab %}
-                                <li class="header__nav-item header__nav-item_active">{{tab}}</li>
+                            {% if tab.text == activeTab %}
+                                <li class="header__nav-item header__nav-item_active">{{tab.text}}</li>
                             {% else %}
-                                <li class="header__nav-item">{{tab}}</li>
+                                <li class="header__nav-item">{{tab.text}}</li>
                             {% endif %}
                         {%- endfor -%}
                     </ul>

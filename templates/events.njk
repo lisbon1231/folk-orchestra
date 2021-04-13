@@ -14,9 +14,7 @@
             {% import "./blocks/header.html" as header %}
             {{ header.props('Aфиша', true) }}
 
-            {% set mainEvent = collections
-                .events[0]
-                .data %}
+            {% set mainEvent = collections.events[0].data %}
             <div class="afisha">
                 <div class="afisha__banner" style="background-image: url('../../../content/events/{{mainEvent.banner}}')">
                     <div class="afisha__tags">
