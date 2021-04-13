@@ -1,4 +1,8 @@
-{% set tabs = [
+{# {% set tabs = [
+{
+        text: "Главная",
+        link: "/"
+    },
     {
         text: "Aфиша",
         link: "/events"
@@ -18,16 +22,20 @@
         text: "Контакты",
         link: "/contacts"
     }
+] %} #}
+{% set tabs = [
+    {
+        text: "Главная",
+        link: "/"
+    }, {
+        text: "История",
+        link: "/history"
+    }
 ] %}
 <footer class="footer typo typo_theme_tags">
     <div class="footer__container limiter">
         <p class="footer__copyright">© Крымский оркестр русских народных инструментов им. Г.Г. Шендерева</p>
         <ul class="footer__nav">
-            <li class="footer__nav-item">
-                <a class="footer__nav-link">
-                Главная
-            </a>
-            </li>
             {%- for tab in tabs-%}
                 <li class="footer__nav-item">
                     <a class="footer__nav-link" href="{{tab.link}}">
@@ -38,16 +46,16 @@
         </ul>
         <ul class="footer__socials">
             <li class="footer__social-item">
-                <a class="footer__social footer__social_theme_vk"></a>
+                <a class="footer__social footer__social_theme_vk" href="https://vk.com/club18069765" target="_blank"></a>
             </li>
             <li class="footer__social-item">
-                <a class="footer__social footer__social_theme_fb"></a>
+                <a class="footer__social footer__social_theme_fb" href="https://www.facebook.com/shenderevorchester/?ref=page_internal"  target="_blank"></a>
             </li>
-            <li class="footer__social-item">
+            {# <li class="footer__social-item">
                 <a class="footer__social footer__social_theme_inst"></a>
-            </li>
+            </li> #}
             <li class="footer__social-item">
-                <a class="footer__social footer__social_theme_gg"></a>
+                <a class="footer__social footer__social_theme_gg" href="mailto:valeksevastopol@mail.ru"></a>
             </li>
         </ul>
     </div>

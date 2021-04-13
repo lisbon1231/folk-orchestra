@@ -220,9 +220,9 @@ collections:
 
   - label: "Про оркестр"
     name: "About"
-    folder: "content/info"
+    folder: "content"
     create: true
-    slug: "{{fields.id}}"
+    slug: "main"
     fields:
       - { name: id, label: Id, widget: generateId }
       - { label: "Коллекция", name: "tags", widget: "hidden", default: "info" }

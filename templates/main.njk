@@ -10,132 +10,22 @@ title: My Rad Blog
     <link href="../../../../static/typo.css" rel="stylesheet" ></link>
     <link href="../../../../static/styles.css" rel="stylesheet" ></link>
 
-    {# <title>{{ info.data.title }}</title> #}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
+    <title>{{ title }}</title>
   </head>
   <body class="page">
     {% import "./blocks/header.html" as header %}
     {{ header.props('', false)}}
 
-    {%- for info in collections.info -%}
-      <div class="banner">
-        <div class="banner__text">
-          <h1 class="banner__title typo typo_theme_major">{{ info.data.title }}</h1>
-          <p class="banner__slogan typo typo_size_m typo_height_m">{{ info.data.short_description}}</p>
-        </div>
+    <div class="banner">
+      <div class="banner__text">
+        <h1 class="banner__title typo typo_theme_major">{{ title }}</h1>
+        <p class="banner__slogan typo typo_size_m typo_height_m">{{ short_description}}</p>
       </div>
-      <div class="intro limiter">
-        <p class="intro__main-text">{{ info.data.middle_description}}</p>
-        <a class="intro__link-details" href="#">Подробнее</a>
-      </div>
-    {%- endfor -%}
-    <section class="section">
-      <h2 class="section__title limiter typo typo_theme_subtitle">Ближайшие концерты</h2>
-      <ul class="upcomming">
-        {# {%- for event in collections.events -%}
-          <li class="upcomming__item">
-            <div class="upcomming__info">
-              <span class="upcomming__date typo typo_theme_small">{{ event.data.date2 }}</span>
-              <h3 class="upcomming__title">{{ event.data.title }}</h3>
-              <p class="upcomming__description">
-                {{ event.data.short_description }}
-              </p>
-              <span class="upcomming__entrance">
-                {% if not event.data.price %} Вход свободный {% endif %}
-              </span>
-            </div>
-          </li>
-        {%- endfor -%} #}
-        <li class="upcomming__item">
-          <div class="upcomming__info">
-            <span class="upcomming__date typo typo_theme_small">28 декабря 19:00</span>
-            <h3 class="upcomming__title">Метель</h3>
-            <p class="upcomming__description">
-                Музыкальные иллюстрации к повести Пушкина. 
-              </p>
-            <span class="upcomming__entrance">Вход свободный</span>
-            <a href="#" class="upcomming__link">Подробнее</a>
-          </div>
-        </li>
-        <li class="upcomming__item">
-          <div class="upcomming__info">
-            <span class="upcomming__date typo typo_theme_small">30 ноября 18:00</span>
-            <h3 class="upcomming__title">Воспоминание о вальсе</h3>
-            <p class="upcomming__description">
-                Популярные старинные вальсы 20-го века (Джойса, Кюсса, Андреева и других)
-              </p>
-            <span class="upcomming__entrance">Вход свободный</span>
-            <a href="#" class="upcomming__link">Подробнее</a>
-          </div>
-        </li>
-        <li class="upcomming__item">
-          <div class="upcomming__info">
-            <span class="upcomming__date typo typo_theme_small">30 июня 13:00</span>
-            <h3 class="upcomming__title">День балалайки</h3>
-            <p class="upcomming__description">
-                Музыка солнечной долины
-              </p>
-            <span class="upcomming__entrance">Вход свободный</span>
-            <a href="#" class="upcomming__link">Подробнее</a>
-          </div>
-        </li>
-        <li class="upcomming__item">
-          <div class="upcomming__info">
-            <span class="upcomming__date typo typo_theme_small">29 марта 18:00</span>
-            <h3 class="upcomming__title">9 лет оркестру</h3>
-            <p class="upcomming__description">
-                Концерт в честь 5-летия воссоединения Крыма с Россией
-              </p>
-            <span class="upcomming__entrance">Вход свободный</span>
-            <a href="#" class="upcomming__link">Подробнее</a>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <section class="section">
-      <h2 class="section__title limiter typo typo_theme_subtitle">Новости</h2>
-      <ul class="news">
-        <li class="news__item">
-          <img src="../../../../static/uploads/bla.jpeg" class="news__img">
-          <div class="news__desciption">
-            <h3 class="news__title">Оркестр им.Г.Шендерева исполнит Гимн России на стадионе «Газпром-Арена»</h3>
-            <p class="news__text">1 сентября 2019 года артисты оркестра русских народных инструментов им.Г.Шендерева примут участие в общенациональной акции - массовом исполнении гимна в составе сводного симфонического оркестра из 10 тысяч музыкантов, участников творческих коллективов...</p>
-            <ul class="news__links">
-              <li class="news__link-item">
-                <p class="news__link-text">Читать дальше</p>
-                <a class="news__link typo typo_theme_accent">mysupersite.io/articles/12842</a>
-              </li>
-              <li class="news__link-item">
-                <p class="news__link-text">Источник</p>
-                <a class="news__link typo typo_theme_accent">astrograph.io</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="news__item news__item_right">
-          <img src="../../../../static/uploads/bla3.jpeg" class="news__img">
-          <div class="news__desciption">
-            <h3 class="news__title">Начался приём заявок в российскую музыкальную базу данных и карту МузGIS.</h3>
-            <p class="news__text">Заносится (бесплатно) информация о вашей деятельности и услугах, которой пользуются заказчики, продюсеры и организаторы мероприятий.</p>
-            <p class="news__text">Если вы пожелаете воспользоваться этой возможностью, буду ждать вашего ответа!</p>
-            <ul class="news__links">
-              <li class="news__link-item">
-                <p class="news__link-text">Читать дальше</p>
-                <a class="news__link typo typo_theme_accent">mysupersite.io/articles/12842</a>
-              </li>
-              <li class="news__link-item">
-                <p class="news__link-text">Источник</p>
-                <a class="news__link typo typo_theme_accent">astrograph.io</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </section>
+    </div>
+    <div class="intro limiter">
+      <p class="intro__main-text">{{ middle_description}}</p>
+      <a class="intro__link-details" href="/history">Подробнее</a>
+    </div>
     {% include "./blocks/footer.njk" %}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="../../../../static/vendors/slick.min.js"></script>
-    <script type="text/javascript" src="../../../../static/index.js"></script>
   </body>
 </html>

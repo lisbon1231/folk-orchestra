@@ -1,11 +1,15 @@
 {% macro props(activeTab, isFixed) %}
-    {% set tabs = [
+    {# {% set tabs = [
         { text: "Aфиша", link: "/events"},
         { text: "Галлерея", link: "/albums"},
         { text: "Новости", link: "/news"},
         { text: "Состав", link: "/members"},
         { text: "История", link: "/history"},
         { text: "Контакты", link: "/contacts"}
+    ] %} #}
+    {% set tabs = [
+        { text: "Главная", link: "/"},
+        { text: "История", link: "/history"}
     ] %}
     {% if isFixed %}
         <header class="header header_fixed">
