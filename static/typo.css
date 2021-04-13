@@ -21,6 +21,12 @@
     font-weight: 700;
 }
 
+.typo_theme_sub-subtitle {
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 500;
+}
+
 .typo_theme_plain {
     font-size: 24px;
     font-weight: 400;

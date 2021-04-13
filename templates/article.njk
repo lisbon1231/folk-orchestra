@@ -17,12 +17,12 @@
             <section class="section typo typo_theme_plain article">
                 <div class="limiter limiter_small">
                 {% if title %}
-                    <h1 class="article__title">{{title}}</h1>
+                    <h1 class="article__title typo typo_theme_subtitle">{{title}}</h1>
                 {% endif %}
                 {% if mainphoto %}
                     <img src="/content/history/{{mainphoto}}" class="article__main-illustration">
                 {% endif %}
-                    {{ content | safe }}
+                <div class="article__content">{{ content | safe }}</div>
                 </div>
                 {% if quotes %}
                     <div class="article__quote">

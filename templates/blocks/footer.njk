@@ -1,17 +1,54 @@
-<footer class="footer">
-    <ul class="footer__links">
-        <li class="footer__link-item">
-            <a class="footer__link footer__link_theme_vk"></a>
-        </li>
-        <li class="footer__link-item">
-            <a class="footer__link footer__link_theme_fb"></a>
-        </li>
-        <li class="footer__link-item">
-            <a class="footer__link footer__link_theme_inst"></a>
-        </li>
-        <li class="footer__link-item">
-            <a class="footer__link footer__link_theme_gg"></a>
-        </li>
-    </ul>
-    <p class="footer__copyright">© Крымский оркестр русских народных инструментов им. Г.Г. Шендерева</p>
+{% set tabs = [
+    {
+        text: "Aфиша",
+        link: "/events"
+    }, {
+        text: "Галлерея",
+        link: "/albums"
+    }, {
+        text: "Новости",
+        link: "/news"
+    }, {
+        text: "Состав",
+        link: "/members"
+    }, {
+        text: "История",
+        link: "/history"
+    }, {
+        text: "Контакты",
+        link: "/contacts"
+    }
+] %}
+<footer class="footer typo typo_theme_tags">
+    <div class="footer__container limiter">
+        <p class="footer__copyright">© Крымский оркестр русских народных инструментов им. Г.Г. Шендерева</p>
+        <ul class="footer__nav">
+            <li class="footer__nav-item">
+                <a class="footer__nav-link">
+                Главная
+            </a>
+            </li>
+            {%- for tab in tabs-%}
+                <li class="footer__nav-item">
+                    <a class="footer__nav-link" href="{{tab.link}}">
+                        <span>{{tab.text}}</span>
+                    </a>
+                </li>
+            {%- endfor -%}
+        </ul>
+        <ul class="footer__socials">
+            <li class="footer__social-item">
+                <a class="footer__social footer__social_theme_vk"></a>
+            </li>
+            <li class="footer__social-item">
+                <a class="footer__social footer__social_theme_fb"></a>
+            </li>
+            <li class="footer__social-item">
+                <a class="footer__social footer__social_theme_inst"></a>
+            </li>
+            <li class="footer__social-item">
+                <a class="footer__social footer__social_theme_gg"></a>
+            </li>
+        </ul>
+    </div>
 </footer>
