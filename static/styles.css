@@ -206,21 +206,15 @@ p.intro__main-text:before {
 }
 
 .header__nav-item {
-    padding-left: 24px;
-    padding-right: 24px;
     box-sizing: border-box;
     line-height: 96px;
     font-weight: 500;
 }
 
-/* 
-.logo {
-    width: 72px;
-    height: 72px;
-    background-image: url(logo.jpg);
-    background-position: center;
-    background-size: 150%;
-} */
+.header__link {
+    padding-left: 24px;
+    padding-right: 24px;
+}
 
 .upcomming {
     display: flex;
@@ -854,6 +848,19 @@ p.intro__main-text:before {
     outline: none;
 }
 
+.link_theme_header {
+    color: inherit;
+    transition-duration: 0s;
+}
+
+.link:hover, .link:focus {
+    opacity: 1;
+}
+
+.link:hover, .link:visited {
+    color: inherit;
+}
+
 .afisha__troupe {
     list-style: none;
     display: flex;
@@ -1404,9 +1411,19 @@ p.intro__main-text:before {
     height: 100%;
 }
 
+.article {
+    padding-top: 88px;
+}
+
 .article p {
     margin: 0;
     margin-bottom: 20px;
+}
+
+.article h2 {
+    margin: 0;
+    margin-top: 88px;
+    margin-bottom: 44px;
 }
 
 .article__main-illustration {

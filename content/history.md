@@ -2,14 +2,12 @@
 id: "5652668090"
 layout: article.njk
 tags: "article"
+title: Крымский оркестр русских народных инструментов им. Г.Г. Шендерева
 images:
   - photos/jornyak.jpg
   - photos/group.jpg
   - photos/chaikin.jpg
 ---
-# Крымский оркестр русских народных инструментов им. Г.Г.
-
-
 
 ## Основание
 

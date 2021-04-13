@@ -16,8 +16,12 @@
             {% set inhonorCol = collections.article %}
             <section class="section typo typo_theme_plain article">
                 <div class="limiter limiter_small">
-                    <h1 class="article__title ">{{title}}</h1>
+                {% if title %}
+                    <h1 class="article__title">{{title}}</h1>
+                {% endif %}
+                {% if mainphoto %}
                     <img src="/content/history/{{mainphoto}}" class="article__main-illustration">
+                {% endif %}
                     {{ content | safe }}
                 </div>
                 {% if quotes %}
