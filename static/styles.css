@@ -1262,8 +1262,8 @@ p.intro__main-text:before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
-    box-sizing: border-box;
+    padding: 44px 0;
+    /* box-sizing: border-box; */
     /* grid-auto-flow: column; */
 }
 

@@ -66,6 +66,15 @@ collections:
           default: "members.njk",
         }
       - { label: "Имя", name: "name", widget: "string" }
+      - { label: "Город", name: "city", widget: "string" }
+      - {
+          label: "Роль",
+          name: "role",
+          widget: "select",
+          options: ["Дирижер", "Музыкант", "Солист"],
+          default: "musician",
+          multiple: false,
+        }
       - {
           label: "Инструмент",
           name: "instrument",
@@ -80,14 +89,7 @@ collections:
               "Фортепиано",
             ],
           multiple: true,
-        }
-      - {
-          label: "Роль",
-          name: "role",
-          widget: "select",
-          options: ["Дирижер", "Музыкант", "Солист"],
-          default: "musician",
-          multiple: false,
+          required: false
         }
       - {
           label: "Работает",
