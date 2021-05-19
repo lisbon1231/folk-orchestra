@@ -54,9 +54,9 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {
           label: "Коллекция",
-          name: "ensembles",
+          name: "tags",
           widget: "hidden",
-          default: "members",
+          default: "ensembles",
         }
       - {
           label: "Шаблон",
@@ -187,23 +187,28 @@ collections:
           name: "full_description",
           widget: "markdown",
         }
-      - { label: "Место проведения", name: "place", widget: "string" }
-      - {
-          label: "Дата",
-          name: "_date",
-          widget: "datetime",
-          date_format: "DD / MM / YYYY",
-          time_format: "",
-          format: "DD dddd gggg",
-        }
-      - {
-          label: "Время",
-          name: "time",
-          widget: "datetime",
-          date_format: "",
-          time_format: "HH : mm",
-          format: "HH:mm",
-        }
+      - label: "Место и время проведения"
+        name: "dateTime"
+        widget: "list"
+        fields:
+          - { label: "Место проведения", name: "place", widget: "string" }
+          - { label: "Ссылка на мето проведения", name: "placeLink", widget: "string" }
+          - {
+            label: "Дата",
+            name: "_date",
+            widget: "datetime",
+            date_format: "DD / MM / YYYY",
+            time_format: "",
+            format: "DD dddd gggg",
+          }
+          - {
+            label: "Время",
+            name: "time",
+            widget: "datetime",
+            date_format: "",
+            time_format: "HH : mm",
+            format: "HH:mm",
+          }
       - {
           label: "Афиша",
           name: "poster",
@@ -216,15 +221,9 @@ collections:
           name: "duration",
           widget: "number",
           value_type: "float",
+          required: false
         }
-      - { label: "Вход платный", name: "price", widget: "boolean" }
-      - {
-          label: "Баннер",
-          name: "banner",
-          widget: "image",
-          allow_multiple: false,
-          media_folder: "banner",
-        }
+      - { label: "Вход платный", name: "price", widget: "boolean", default: false }
       - {
           label: "Репертуар",
           name: "compositions",
@@ -241,6 +240,13 @@ collections:
           search_fields: ["name"],
           value_field: "name",
           display_fields: ["name"],
+        }
+      - {
+          label: "Баннер",
+          name: "banner",
+          widget: "image",
+          allow_multiple: false,
+          media_folder: "banner",
         }
 
   - label: "Про оркестр"
