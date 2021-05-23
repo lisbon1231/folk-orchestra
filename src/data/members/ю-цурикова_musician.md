@@ -2,7 +2,9 @@
 tags: members
 layout: members.njk
 name: Ю. Цурикова
-is_part_of_orchestra: false
-role: musician
+is_part_of_orchestra: true
+role: Музыкант
+instrument:
+  - Домра прима
 works: да
 ---
