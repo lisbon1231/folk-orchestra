@@ -229,8 +229,14 @@ collections:
           name: "compositions",
           widget: "list",
           allow_add: true,
-          field: { label: Произведение, name: composition, widget: text },
+          field: { label: Произведение, name: composition, widget: string },
         }
+      - label: "Композиторы"
+        name: "conductors"
+        widget: "list"
+        fields:
+          - { label: Композитор, name: conductor, widget: string }
+          - { label: "Ссылка на инфромацию о композиторе", name: "link", widget: "string" }
       - { label: "Тэги", name: "eventtags", widget: "list", allow_add: true }
       - {
           label: "Состав",
