@@ -1,6 +1,8 @@
 ---
 tags: bands
 name: Состав Дня баллалайки 2015г
+band:
+  - Состав Дня баллалайки 2015г
 external_ensemble:
   - Фольклорный ансамбль "Радоница"
 participants:
