@@ -2,7 +2,7 @@ backend:
   name: github
   repo: lisbon1231/folk-orchestra
   branch: main
-media_folder: "static/uploads"
+media_folder: "src/static/uploads"
 # publish_mode: editorial_workflow
 media_library:
   name: cloudinary
@@ -14,7 +14,7 @@ public_folder: "/uploads"
 collections:
   - label: "Альбомы"
     name: "album"
-    folder: "content/album"
+    folder: "src/data/album"
     create: true
     fields:
       - {
@@ -48,7 +48,7 @@ collections:
             multiple: true
   - label: "Ансамбли"
     name: "ensemble"
-    folder: "content/ensembles"
+    folder: "src/data/ensembles"
     create: true
     slug: "{{fields.name}}_{{fields.role}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -72,7 +72,7 @@ collections:
 
   - label: "Состав"
     name: "Members"
-    folder: "content/members"
+    folder: "src/data/members"
     create: true
     slug: "{{fields.name}}_{{fields.role}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -135,7 +135,7 @@ collections:
     #   multiple: true
   - label: "Составы"
     name: "Bands"
-    folder: "content/bands"
+    folder: "src/data/bands"
     create: true
     fields:
       - { label: "Коллекция", name: "tags", widget: "hidden", default: "bands" }
@@ -159,7 +159,7 @@ collections:
 
   - label: "События"
     name: "Events"
-    folder: "content/events"
+    folder: "src/data/events"
     create: true
     slug: "{{fields.id}}"
     fields:
@@ -184,7 +184,7 @@ collections:
         }
       - {
           label: "Подробное Описание",
-          name: "full_description",
+          name: "body",
           widget: "markdown",
         }
       - label: "Место и время проведения"
@@ -197,9 +197,9 @@ collections:
             label: "Дата",
             name: "_date",
             widget: "datetime",
-            date_format: "DD / MM / YYYY",
-            time_format: "",
-            format: "DD dddd gggg",
+            # date_format: "DD / MM / YYYY",
+            # time_format: "",
+            # format: "DD dddd gggg",
           }
           - {
             label: "Время",
@@ -207,7 +207,7 @@ collections:
             widget: "datetime",
             date_format: "",
             time_format: "HH : mm",
-            format: "HH:mm",
+            format: "HH mm",
           }
       - {
           label: "Афиша",
@@ -232,10 +232,10 @@ collections:
           field: { label: Произведение, name: composition, widget: string },
         }
       - label: "Композиторы"
-        name: "conductors"
+        name: "composers"
         widget: "list"
         fields:
-          - { label: Композитор, name: conductor, widget: string }
+          - { label: Композитор, name: composer, widget: string }
           - { label: "Ссылка на инфромацию о композиторе", name: "link", widget: "string" }
       - { label: "Тэги", name: "eventtags", widget: "list", allow_add: true }
       - {
@@ -257,13 +257,13 @@ collections:
 
   - label: "Про оркестр"
     name: "About"
-    folder: "content"
+    folder: "src/data"
     create: true
-    slug: "main"
+    slug: "index"
     fields:
       - { name: id, label: Id, widget: generateId }
       - { label: "Коллекция", name: "tags", widget: "hidden", default: "info" }
-      - { label: "Шаблон", name: "layout", widget: "hidden", default: "main" }
+      - { label: "Шаблон", name: "layout", widget: "hidden", default: "index" }
       - { label: "Название", name: "title", widget: "string" }
       - {
           label: "Краткое описание",
@@ -282,7 +282,7 @@ collections:
         }
   - label: "В честь"
     name: "inhonor"
-    folder: "content/history"
+    folder: "src/data/history"
     create: true
     slug: "inhonor"
     fields:
@@ -294,7 +294,7 @@ collections:
       - { label: "Картинки", name: "images", widget: "image", allow_multiple: true }
   - label: "История"
     name: "history"
-    folder: "content"
+    folder: "src/data"
     create: true
     slug: "history"
     fields:

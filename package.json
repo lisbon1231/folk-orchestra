@@ -5,7 +5,8 @@
   "main": "bla.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx @11ty/eleventy  --watch"
+    "dev": "eleventy  --serve",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../../../static/typo.css" rel="stylesheet" ></link>
-    <link href="../../../../static/styles.css" rel="stylesheet" ></link>
+    <link href="/static/typo.css" rel="stylesheet" ></link>
+    <link href="/static/styles.css" rel="stylesheet" ></link>
     {# <title>{{ info.data.title }}</title> #}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
   </head>
@@ -26,33 +26,41 @@
           <div class="afisha__banner-info">
             <h1 class="afisha__title typo typo_theme_major">{{title}}</h1>
             <h1 class="afisha__short-description typo typo_theme_plain">{{short_description}}</h1>
-            <p class="afisha__datetime typo typo_theme_small">
-              <span class="afisha__date">{{_date}},</span>
-              <span class="afisha__time">19:00</span>
-            </p>
+            {%- for dateT in dateTime-%}
+              <p class="afisha__datetime typo typo_theme_small">
+                <span class="afisha__date">{{dateT._date | rusDate}},</span>
+                <span class="afisha__time">{{dateT.time | rusTime}}</span>
+              </p>
+            {%- endfor -%}
+
             {% if price %}
               <a class="afisha__button button typo typo_theme_plain">Купить билеты</a>
             {% endif %}
           </div>
         </div>
+
         <div class="afisha__container">
-          <p class="afisha__full-description typo typo_theme_plain">{{full_description}}</p>
+          <div class="afisha__full-description typo typo_theme_plain">
+            {{ content | safe }}
+          </div>
         </div>
         <section class="section afisha__row">
           <div class="afisha__container">
             <div class="afisha__info">
               <ul class="afisha__info-list">
-                <li class="afisha__info-list-item">
+                {%- for dateT in dateTime-%}
+                  <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Дата и время </h4>
-                  <span class="afisha__info-list-item-text typo typo_theme_accent">{{_date}}, 19:00</span>
+                  <span class="afisha__info-list-item-text typo typo_theme_accent">{{dateT._date | rusDate}}, {{dateT.time | rusTime}}</span>
                 </li>
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Место</h4>
-                  <a class="afisha__info-list-item-text typo typo_theme_accent link" href="https://yandex.ru/profile/38238683134" target="_blank">
-                    {{place}}
+                  <a class="afisha__info-list-item-text typo typo_theme_accent link" href="{{dateT.placeLink}}" target="_blank">
+                    {{dateT.place}}
                     <span class="afisha__info-list-item-text-arrow"></span>
                   </a>
                 </li>
+                {%- endfor -%}
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Длительность</h4>
                   <span class="afisha__info-list-item-text typo typo_theme_accent">{{duration}} минут</span>
@@ -98,7 +106,7 @@
             <ul class="afisha__composers-list">
               {%- for composer in composers-%}
                 <li class="afisha__composer">
-                  <a class="afisha__composer-link  typo typo_theme_plain link">{{composer}}</a>
+                  <a class="afisha__composer-link  typo typo_theme_accent link" href='{{composer.link}}'>{{composer.composer}}</a>
                 </li>
               {%- endfor -%}
             </ul>
@@ -115,7 +123,7 @@
                       <li class="afisha__troupe-member">
                         <a class="member link typo typo_theme_tags">
                           <div class="member__img-container">
-                            <img src="../../../../static/{{member.data.photo}}" class="member__img"/>
+                            <img src="{{member.data.photo}}" class="member__img"/>
                           </div>
                           <p class="member__name">{{member.data.name}}</p>
                           <div class="member__instrument typo_theme_light">
@@ -145,7 +153,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <script type="text/javascript" src="../../../../static/vendors/slick.min.js"></script>
-    <script type="text/javascript" src="../../../../static/event.js"></script>
+    <script type="text/javascript" src="/static/vendors/slick.min.js"></script>
+    <script type="text/javascript" src="/static/event.js"></script>
   </body>
 </html>

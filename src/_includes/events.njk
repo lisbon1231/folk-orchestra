@@ -10,10 +10,11 @@
     </head>
     <body class="page">
         <div class="page__content">
-
             {% import "./blocks/header.html" as header %}
             {{ header.props('Aфиша', true) }}
-
+{# {%- for event in collections.events-%}
+          {{event.url}}
+        {%- endfor -%} #}
             {% set mainEvent = collections.events[0].data %}
             <div class="afisha">
                 <div class="afisha__banner" style="background-image: url('../../../content/events/{{mainEvent.banner}}')">

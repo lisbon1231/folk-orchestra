@@ -826,6 +826,7 @@ p.intro__main-text:before {
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    padding-right: 20px;
 }
 
 .afisha__row {
