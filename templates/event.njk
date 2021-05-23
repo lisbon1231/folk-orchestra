@@ -15,7 +15,7 @@
       {{ header.props('Aфиша', true) }}
 
       <div class="afisha">
-        <div class="afisha__banner" style="background-image: url('../../../../content/events/{{banner}}')">
+        <div class="afisha__banner" style="background-image: url('{{banner}}')">
           <div class="afisha__tags">
             <ul class="afisha__tags-list">
               {%- for eventtag in eventtags-%}
@@ -78,7 +78,7 @@
                   </li>
                 {% endif %}
               </ul>
-              <img class="afisha__afisha" src="../../../../content/events/{{poster}}"/>
+              <img class="afisha__afisha" src="{{poster}}"/>
             </div>
           </div>
         </section>
@@ -138,7 +138,7 @@
       {% include "./blocks/footer.njk" %}
       <div class="modal">
         <div class="modal__container">
-          <img src="../../../../content/events/{{poster}}" class="modal__img"/>
+          <img src="{{poster}}" class="modal__img"/>
         </div>
       </div>
     </div>
