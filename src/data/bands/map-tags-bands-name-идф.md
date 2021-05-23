@@ -1,4 +1,0 @@
----
-tags: bands
-name: идф
----
