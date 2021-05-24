@@ -1,4 +1,5 @@
 const IntlR = require("intl")
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksFilter("rusDate", function (value) {
     const date = new Date(value)
@@ -13,12 +14,13 @@ module.exports = (eleventyConfig) => {
   });
   
   eleventyConfig.addNunjucksFilter("findByName", function(arr, name) {
-    console.log(name)
+    
     return arr.find(item => item.template.frontMatter.data.name === name)
   });
   
-  eleventyConfig.addNunjucksFilter("findByNameArray", function(arr, addToFilter) {
-    return arr.filter(item => addToFilter.includes(item.template.frontMatter.data.name))
+  eleventyConfig.addNunjucksFilter("findByNameArray", function(arr, arrToFilter) {
+    if(!arrToFilter) return []
+    return arr.filter(item => arrToFilter.includes(item.template.frontMatter.data.name))
   });
   
   eleventyConfig.addNunjucksFilter("isFutureEvent", function(arr) {
