@@ -1406,11 +1406,17 @@ p.intro__main-text:before {
     box-sizing: border-box;
 }
 
-/* .event-preview:nth-child(2n) .event-preview__date { */
+.event-preview__date-row {
+    margin-bottom: 10px;
+}
+
+.event-preview__date-row:last-child {
+    margin-bottom: 0;
+}
 
 .event-preview__date {
     left: auto;
-    right: 88px;
+    right: 44px;
 }
 
 .event-preview:hover .event-preview__picture {

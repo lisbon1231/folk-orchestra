@@ -1,0 +1,33 @@
+{% macro props(banner, eventtags, title, short_description, dateTime, isFutureEvent, isLastEvent) %}
+  <div class="afisha__banner" style="background-image: url('{{banner}}')">
+    <div class="afisha__tags">
+      <ul class="afisha__tags-list">
+        {%- for eventtag in eventtags-%}
+          <li class="afisha__tag typo typo_theme_tags">{{eventtag}}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="afisha__banner-info">
+      <h1 class="afisha__title typo typo_theme_major">{{title}}</h1>
+      <h1 class="afisha__short-description typo typo_theme_plain">{{short_description}}</h1>
+      {%- for dateT in dateTime-%}
+        <p class="afisha__datetime typo typo_theme_small">
+          <span class="afisha__date">{{dateT._date | rusDate}},</span>
+          <span class="afisha__time">{{dateT.time | rusTime}}</span>
+        </p>
+      {%- endfor -%}
+
+      {% if price %}
+        <a class="afisha__button button typo typo_theme_plain">Купить билеты</a>
+      {% endif %}
+
+    </div>
+    {% if isFutureEvent %}
+      <span class="afisha__nearest typo typo_theme_accent">Ближайшее</span>
+    {% elif isLastEvent %}
+      <span class="afisha__nearest typo typo_theme_accent">Последнее событие</span>
+    {# {% else %} #}
+    
+    {% endif %}
+  </div>
+{% endmacro %}

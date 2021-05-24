@@ -11,32 +11,10 @@
     <div class="page__content">
       {% import "./blocks/header.html" as header %}
       {% import "./blocks/caruselMember.html" as caruselMember %}
+      {% import "./blocks/afishaBanner.html" as afishaBanner %}
       {{ header.props('Aфиша', true) }}
       <div class="afisha">
-        <div class="afisha__banner" style="background-image: url('{{banner}}')">
-          <div class="afisha__tags">
-            <ul class="afisha__tags-list">
-              {%- for eventtag in eventtags-%}
-                <li class="afisha__tag typo typo_theme_tags">{{eventtag}}</li>
-              {%- endfor -%}
-            </ul>
-          </div>
-          <div class="afisha__banner-info">
-            <h1 class="afisha__title typo typo_theme_major">{{title}}</h1>
-            <h1 class="afisha__short-description typo typo_theme_plain">{{short_description}}</h1>
-            {%- for dateT in dateTime-%}
-              <p class="afisha__datetime typo typo_theme_small">
-                <span class="afisha__date">{{dateT._date | rusDate}},</span>
-                <span class="afisha__time">{{dateT.time | rusTime}}</span>
-              </p>
-            {%- endfor -%}
-
-            {% if price %}
-              <a class="afisha__button button typo typo_theme_plain">Купить билеты</a>
-            {% endif %}
-          </div>
-        </div>
-
+        {{ afishaBanner.props(banner, eventtags, title, short_description, dateTime) }}
         <div class="afisha__container afisha__description-container afisha__description-container_short">
             <div class="afisha__description-controls">
               <div class="afisha__control link typo typo_theme_accent">
