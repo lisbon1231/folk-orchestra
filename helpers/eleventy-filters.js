@@ -17,6 +17,8 @@ module.exports = (eleventyConfig) => {
     
     return arr.find(item => item.template.frontMatter.data.name === name)
   });
+
+
   
   eleventyConfig.addNunjucksFilter("findByNameArray", function(arr, arrToFilter) {
     if(!arrToFilter) return []

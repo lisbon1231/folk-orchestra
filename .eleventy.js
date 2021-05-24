@@ -6,6 +6,16 @@ module.exports = function (eleventyConfig) {
 
     injectFilters(eleventyConfig)
 
+    eleventyConfig.addNunjucksFilter("findByIdArray", function(arr, arrToFilter) {
+        if(!arrToFilter) return []
+        return arr.filter(item => arrToFilter.includes(item.template.frontMatter.data.id))
+    });
+
+    eleventyConfig.addNunjucksFilter("findById", function(arr, id) {
+    
+        return arr.find(item => item.template.frontMatter.data.id === id)
+      });
+
     return {
         dir: {
             input: 'src',

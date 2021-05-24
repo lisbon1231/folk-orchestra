@@ -102,10 +102,10 @@
         <section class="section afisha__row">
           <ul class="afisha__troupe">
             {% set groupList = collections.bands | findByName(band) %}
-            {% set orchestraBand = collections.current_band | findByName(groupList.data.band) %}
-            {% set orchestraPeople = collections.members | findByNameArray(orchestraBand.data.participants) %}
-            {% set externalEnsemble = collections.ensembles | findByNameArray(groupList.data.external_ensemble) %}
-            {% set externalPeople = collections.members | findByNameArray(groupList.data.participants) %}
+            {% set orchestraBand = collections.current_band | findById(groupList.data.band) %}
+            {% set orchestraPeople = collections.members | findByIdArray(orchestraBand.data.participants) %}
+            {% set externalEnsemble = collections.ensembles | findByIdArray(groupList.data.external_ensemble) %}
+            {% set externalPeople = collections.members | findByIdArray(groupList.data.participants) %}
 
             {%- for person in externalPeople-%}
               {{ caruselMember.props(person.data.name, person.data.photo, person.url, person.data.role, person.data.instrument)}}
