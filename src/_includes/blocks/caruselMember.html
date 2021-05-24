@@ -1,0 +1,23 @@
+{% macro props(name, photo, url, role, instrument) %}
+  <li class="afisha__troupe-member">
+    {# <a class="member link typo typo_theme_tags" href='{{url}}'> #}
+    <a class="member link typo typo_theme_tags">
+      <div class="member__img-container">
+        {% if photo %}
+          <img src="{{photo}}" class="member__img"/>
+        {% else %}
+          <img src="/static/default_avatar.jpeg" class="member__img"/>
+        {% endif %}
+
+      </div>
+      <p class="member__name">{{name}}</p>
+      <div class="member__instrument typo_theme_light">
+        {% if role == "Дирижер" or role == "Солист"%}
+          {{role}}
+        {% else %}
+          {{instrument}}
+        {% endif %}
+      </div>
+    </a>
+  </li>
+{% endmacro %}

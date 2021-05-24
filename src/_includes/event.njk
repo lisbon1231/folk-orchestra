@@ -6,14 +6,12 @@
     <link href="/static/typo.css" rel="stylesheet" ></link>
     <link href="/static/styles.css" rel="stylesheet" ></link>
     {# <title>{{ info.data.title }}</title> #}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
   </head>
   <body class="page">
     <div class="page__content">
-
       {% import "./blocks/header.html" as header %}
+      {% import "./blocks/caruselMember.html" as caruselMember %}
       {{ header.props('Aфиша', true) }}
-
       <div class="afisha">
         <div class="afisha__banner" style="background-image: url('{{banner}}')">
           <div class="afisha__tags">
@@ -39,10 +37,16 @@
           </div>
         </div>
 
-        <div class="afisha__container">
-          <div class="afisha__full-description typo typo_theme_plain">
-            {{ content | safe }}
-          </div>
+        <div class="afisha__container afisha__description-container afisha__description-container_short">
+            <div class="afisha__description-controls">
+              <div class="afisha__control link typo typo_theme_accent">
+                <span class="afisha__control-text" alternativeText='Скрыть'>Показать больше</span>
+                <span class="afisha__info-list-item-text-arrow afisha__info-list-item-text-arrow_dir_bottom"></span>
+              </div>
+            </div>
+            <div class="afisha__full-description typo typo_theme_plain">
+              {{ content | safe }}
+            </div>
         </div>
         <section class="section afisha__row">
           <div class="afisha__container">
@@ -106,7 +110,7 @@
             <ul class="afisha__composers-list">
               {%- for composer in composers-%}
                 <li class="afisha__composer">
-                  <a class="afisha__composer-link  typo typo_theme_accent link" href='{{composer.link}}'>{{composer.composer}}</a>
+                  <a class="afisha__composer-link  typo typo_theme_accent link" target='_blank' href='{{composer.link}}'>{{composer.composer}}</a>
                 </li>
               {%- endfor -%}
             </ul>
@@ -115,30 +119,21 @@
         <h2 class="afisha__subtitle typo typo_theme_subtitle afisha__container">Состав</h2>
         <section class="section afisha__row">
           <ul class="afisha__troupe">
-            {%- for group in collections.bands-%}
-              {% if group.data.name == band %}
-                {%- for memberName in group.data.band-%}
-                  {%- for member in collections.members-%}
-                    {% if member.data.name == memberName %}
-                      <li class="afisha__troupe-member">
-                        <a class="member link typo typo_theme_tags">
-                          <div class="member__img-container">
-                            <img src="{{member.data.photo}}" class="member__img"/>
-                          </div>
-                          <p class="member__name">{{member.data.name}}</p>
-                          <div class="member__instrument typo_theme_light">
-                            {% if member.data.role == "Дирижер" or member.data.role == "Солист"%}
-                              {{member.data.role}}
-                            {% else %}
-                              {{member.data.instrument}}
-                            {% endif %}
-                          </div>
-                        </a>
-                      </li>
-                    {% endif %}
-                  {%- endfor -%}
-                {%- endfor -%}
-              {% endif %}
+            {% set groupList = collections.bands | findByName(band) %}
+            {% set orchestraBand = collections.current_band | findByName(groupList.data.band) %}
+            {% set orchestraPeople = collections.members | findByNameArray(orchestraBand.data.participants) %}
+            {% set externalEnsemble = collections.ensembles | findByNameArray(groupList.data.external_ensemble) %}
+            {% set externalPeople = collections.members | findByNameArray(groupList.data.participants) %}
+            
+            {%- for person in externalPeople-%}
+              {{ caruselMember.props(person.data.name, person.data.photo, person.url, person.data.role, person.data.instrument)}}
+              {# (name, photo, role, instrument) #}
+            {%- endfor -%}
+            {%- for ensemble in externalEnsemble-%}
+              {{ caruselMember.props(ensemble.data.name, ensemble.data.photo, ensemble.url, 'ансамбль')}}
+            {%- endfor -%}
+            {%- for person in orchestraPeople-%}
+              {{ caruselMember.props(person.data.name, person.data.photo, person.url, person.data.role, person.data.instrument)}}
             {%- endfor -%}
           </ul>
         </section>
@@ -150,10 +145,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <script type="text/javascript" src="/static/vendors/slick.min.js"></script>
     <script type="text/javascript" src="/static/event.js"></script>
   </body>
 </html>

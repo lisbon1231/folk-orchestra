@@ -70,7 +70,7 @@ collections:
       - { label: "Информация", name: "history", widget: "markdown" }
       - { label: "Фото", name: "photo", widget: "image", required: false }
 
-  - label: "Состав"
+  - label: "Музыканты"
     name: "Members"
     folder: "src/data/members"
     create: true
@@ -89,7 +89,8 @@ collections:
           default: "members.njk",
         }
       - { label: "Имя", name: "name", widget: "string" }
-      - { label: "Город", name: "city", widget: "string" }
+      - { label: "Город", name: "city", widget: "string", required: false  }
+      - { label: "Член оркестра Шендерева", name: "is_part_of_orchestra", widget: "boolean", default: false, required: false }
       - {
           label: "Роль",
           name: "role",
@@ -104,7 +105,17 @@ collections:
           widget: "select",
           options:
             [
-              "Балалайка",
+              "Домра прима",
+              "Домра альт",
+              "Домра бас",
+              "Балалайка прима",
+              "Балалайка секунда",
+              "Балалайка альт",
+              "Балалайка к-бас",
+              "Баян",
+              "Ударные",
+              "Флейта",
+              "Гусли",
               "Гитара",
               "Скрипка",
               "Волынка",
@@ -121,7 +132,7 @@ collections:
           options: ["да", "нет"],
           default: "да",
         }
-      - { label: "О человеке", name: "history", widget: "markdown" }
+      - { label: "О человеке", name: "history", widget: "markdown", required: false  }
       - { label: "Фото", name: "photo", widget: "image", required: false }
 
     # - label: "Участник"
@@ -133,7 +144,24 @@ collections:
     #   search_fields: ["title", "date"]
     #   display_fields: ["{{title}} - {{date}}"]
     #   multiple: true
-  - label: "Составы"
+  - label: "Составы оркеста Шендерева"
+    name: "current_band"
+    folder: "src/data/current_band"
+    create: true
+    fields:
+      - { label: "Коллекция", name: "tags", widget: "hidden", default: "current_band" }
+      - { label: "Название", name: "name", widget: "string" }
+      - {
+          label: "Участники состава",
+          name: "participants",
+          widget: "relation",
+          collection: "Members",
+          search_fields: ["name"],
+          value_field: "name",
+          display_fields: ["name"],
+          multiple: true
+      }
+  - label: "Составы для выступлений"
     name: "Bands"
     folder: "src/data/bands"
     create: true
@@ -143,19 +171,42 @@ collections:
           label: "Шаблон",
           name: "layout",
           widget: "hidden",
-          default: "bands.njk",
         }
       - { label: "Название", name: "name", widget: "string" }
       - {
-          label: "Состав",
+          label: "Состав оркеста Шендерева",
           name: "band",
+          widget: "relation",
+          collection: "current_band",
+          search_fields: ["name"],
+          value_field: "name",
+          display_fields: ["name"],
+          multiple: true,
+          required: false
+        }
+      - {
+          label: "Пришлашенные ансамбли/оркестры",
+          name: "external_ensemble",
+          widget: "relation",
+          collection: "ensemble",
+          search_fields: ["name"],
+          value_field: "name",
+          display_fields: ["name"],
+          multiple: true,
+          required: false
+        }
+      - {
+          label: "Одиночные участники",
+          name: "participants",
           widget: "relation",
           collection: "Members",
           search_fields: ["name"],
           value_field: "name",
           display_fields: ["name"],
           multiple: true,
+          required: false
         }
+      
 
   - label: "События"
     name: "Events"
@@ -221,6 +272,12 @@ collections:
           name: "duration",
           widget: "number",
           value_type: "float",
+          required: false
+        }
+      - {
+          label: "Ограничение по возрасту",
+          name: "age",
+          widget: "number",
           required: false
         }
       - { label: "Вход платный", name: "price", widget: "boolean", default: false }
