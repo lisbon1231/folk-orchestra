@@ -1,4 +1,5 @@
 ---
+id: "3315709026"
 tags: current_band
 name: Состав оркестра для Дня Балалайки 2015г
 participants:
