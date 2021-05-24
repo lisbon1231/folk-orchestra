@@ -16,15 +16,15 @@
       <div class="afisha">
         {{ afishaBanner.props(banner, eventtags, title, short_description, dateTime) }}
         <div class="afisha__container afisha__description-container afisha__description-container_short">
-            <div class="afisha__description-controls">
-              <div class="afisha__control link typo typo_theme_accent">
-                <span class="afisha__control-text" alternativeText='Скрыть'>Показать больше</span>
-                <span class="afisha__info-list-item-text-arrow afisha__info-list-item-text-arrow_dir_bottom"></span>
-              </div>
+          <div class="afisha__description-controls">
+            <div class="afisha__control link typo typo_theme_accent">
+              <span class="afisha__control-text" alternativeText='Скрыть'>Показать больше</span>
+              <span class="afisha__info-list-item-text-arrow afisha__info-list-item-text-arrow_dir_bottom"></span>
             </div>
-            <div class="afisha__full-description typo typo_theme_plain">
-              {{ content | safe }}
-            </div>
+          </div>
+          <div class="afisha__full-description typo typo_theme_plain">
+            {{ content | safe }}
+          </div>
         </div>
         <section class="section afisha__row">
           <div class="afisha__container">
@@ -32,16 +32,16 @@
               <ul class="afisha__info-list">
                 {%- for dateT in dateTime-%}
                   <li class="afisha__info-list-item">
-                  <h4 class="afisha__info-list-item-title">Дата и время </h4>
-                  <span class="afisha__info-list-item-text typo typo_theme_accent">{{dateT._date | rusDate}}, {{dateT.time | rusTime}}</span>
-                </li>
-                <li class="afisha__info-list-item">
-                  <h4 class="afisha__info-list-item-title">Место</h4>
-                  <a class="afisha__info-list-item-text typo typo_theme_accent link" href="{{dateT.placeLink}}" target="_blank">
-                    {{dateT.place}}
-                    <span class="afisha__info-list-item-text-arrow"></span>
-                  </a>
-                </li>
+                    <h4 class="afisha__info-list-item-title">Дата и время </h4>
+                    <span class="afisha__info-list-item-text typo typo_theme_accent">{{dateT._date | rusDate}}, {{dateT.time | rusTime}}</span>
+                  </li>
+                  <li class="afisha__info-list-item">
+                    <h4 class="afisha__info-list-item-title">Место</h4>
+                    <a class="afisha__info-list-item-text typo typo_theme_accent link" href="{{dateT.placeLink}}" target="_blank">
+                      {{dateT.place}}
+                      <span class="afisha__info-list-item-text-arrow"></span>
+                    </a>
+                  </li>
                 {%- endfor -%}
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Длительность</h4>
@@ -73,6 +73,7 @@
           </div>
         </section>
         <section class="section afisha__container afisha__programm-info">
+        {% if compositions %}
           <div class="afisha__repertoire">
             <h2 class="afisha__subtitle typo typo_theme_subtitle">В программе</h2>
             <ul class="afisha__repertoire-list">
@@ -83,16 +84,19 @@
               {%- endfor -%}
             </ul>
           </div>
-          <div class="afisha__composers">
-            <h2 class="afisha__subtitle typo typo_theme_subtitle">Композиторы</h2>
-            <ul class="afisha__composers-list">
-              {%- for composer in composers-%}
-                <li class="afisha__composer">
-                  <a class="afisha__composer-link  typo typo_theme_accent link" target='_blank' href='{{composer.link}}'>{{composer.composer}}</a>
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
+          {% endif %}
+          {% if composers %}
+            <div class="afisha__composers">
+              <h2 class="afisha__subtitle typo typo_theme_subtitle">Композиторы</h2>
+              <ul class="afisha__composers-list">
+                {%- for composer in composers-%}
+                  <li class="afisha__composer">
+                    <a class="afisha__composer-link  typo typo_theme_accent link" target='_blank' href='{{composer.link}}'>{{composer.composer}}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {% endif %}
         </section>
         <h2 class="afisha__subtitle typo typo_theme_subtitle afisha__container">Состав</h2>
         <section class="section afisha__row">
@@ -102,7 +106,7 @@
             {% set orchestraPeople = collections.members | findByNameArray(orchestraBand.data.participants) %}
             {% set externalEnsemble = collections.ensembles | findByNameArray(groupList.data.external_ensemble) %}
             {% set externalPeople = collections.members | findByNameArray(groupList.data.participants) %}
-            
+
             {%- for person in externalPeople-%}
               {{ caruselMember.props(person.data.name, person.data.photo, person.url, person.data.role, person.data.instrument)}}
               {# (name, photo, role, instrument) #}
