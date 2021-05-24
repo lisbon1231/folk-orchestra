@@ -97,7 +97,7 @@ collections:
           label: "Роль",
           name: "role",
           widget: "select",
-          options: ["Дирижер", "Музыкант", "Солист"],
+          options: ["Дирижер", "Музыкант", "Вокал"],
           default: "musician",
           multiple: false,
         }

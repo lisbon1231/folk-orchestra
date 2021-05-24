@@ -43,14 +43,24 @@
                     </a>
                   </li>
                 {%- endfor -%}
-                <li class="afisha__info-list-item">
-                  <h4 class="afisha__info-list-item-title">Длительность</h4>
-                  <span class="afisha__info-list-item-text typo typo_theme_accent">{{duration}} минут</span>
-                </li>
+                {% if duration %}
+                  <li class="afisha__info-list-item">
+                    <h4 class="afisha__info-list-item-title">Длительность</h4>
+                    <span class="afisha__info-list-item-text typo typo_theme_accent">{{duration}} минут</span>
+                  </li>
+                {% endif %}
+
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Возраст</h4>
-                  <span class="afisha__info-list-item-text typo typo_theme_accent">{{age}}+</span>
+                  <span class="afisha__info-list-item-text typo typo_theme_accent">
+                    {% if age %}
+                      {{age}}+
+                    {% else %}
+                        Без ограничений
+                    {% endif %}
+                  </span>
                 </li>
+
                 <li class="afisha__info-list-item">
                   <h4 class="afisha__info-list-item-title">Вход</h4>
                   <span class="afisha__info-list-item-text typo typo_theme_accent">
@@ -73,17 +83,17 @@
           </div>
         </section>
         <section class="section afisha__container afisha__programm-info">
-        {% if compositions %}
-          <div class="afisha__repertoire">
-            <h2 class="afisha__subtitle typo typo_theme_subtitle">В программе</h2>
-            <ul class="afisha__repertoire-list">
-              {%- for composition in compositions-%}
-                <li class="afisha__composer">
-                  <li class="afisha__repertoire-slot typo typo_theme_plain">{{composition}}</li>
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
+          {% if compositions.length %}
+            <div class="afisha__repertoire">
+              <h2 class="afisha__subtitle typo typo_theme_subtitle">В программе</h2>
+              <ul class="afisha__repertoire-list">
+                {%- for composition in compositions-%}
+                  <li class="afisha__composer">
+                    <li class="afisha__repertoire-slot typo typo_theme_plain">{{composition}}</li>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
           {% endif %}
           {% if composers %}
             <div class="afisha__composers">
