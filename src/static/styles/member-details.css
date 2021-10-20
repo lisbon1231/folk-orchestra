@@ -1,0 +1,25 @@
+.member-details {
+    padding: 20px 0;
+    max-width: 60vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.member-details__info {
+    display: flex;
+}
+
+.member-details__image {
+    object-fit: cover;
+    border-radius: 8px;
+    min-width: 200px;
+    width: 20vw;
+    margin-right: 20px;
+}
+
+.member-details__history {
+    margin-top: 20px;
+}

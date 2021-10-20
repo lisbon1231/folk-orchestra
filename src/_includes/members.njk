@@ -1,7 +1,5 @@
----
-title: My Rad Blog
----
-
+{% import "./blocks/header.html" as header %}
+{% import "./blocks/caruselMember.html" as caruselMember %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,23 +7,29 @@ title: My Rad Blog
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../../../static/typo.css" rel="stylesheet" ></link>
     <link href="../../../../static/styles.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles/members.css" rel="stylesheet" ></link>
 
     <title>{{ title }}</title>
   </head>
   <body class="page">
-    {% import "./blocks/header.html" as header %}
-    {{ header.props('', false)}}
-
-    <div class="banner">
-      <div class="banner__text">
-        <h1 class="banner__title typo typo_theme_major">{{ title }}</h1>
-        <p class="banner__slogan typo typo_size_m typo_height_m">{{ short_description}}</p>
+    <div class="page__content page__content_full-screen">
+      {{ header.props('', true)}}
+      <div class="searchbar">
+        <div class="form form_size_s limiter">
+            <label class="form__label form__label_type_search">
+                <input class="form__input typo typo_theme_small" type="text" name="search_text" placeholder="Поиск"/>
+            </label>
+        </div>
       </div>
+      <main class="members">
+        <ul class="members__list afisha__row">
+          {%- for person in collections.members-%}
+            {{ caruselMember.props(person.data.name, person.data.photo, person.fileSlug, person.data.role, person.data.instrument)}}
+          {%- endfor -%}
+        </ul>
+      </main>
+      {% include "./blocks/footer.njk" %}
     </div>
-    <div class="intro limiter">
-      <p class="intro__main-text">{{ middle_description}}</p>
-      <a class="intro__link-details" href="/history">Подробнее</a>
-    </div>
-    {% include "./blocks/footer.njk" %}
+    <script type="text/javascript" src="../../../../static/members.js"></script>
   </body>
 </html>

@@ -63,7 +63,7 @@ collections:
           label: "Шаблон",
           name: "layout",
           widget: "hidden",
-          default: "members.njk",
+          default: "ensembles.njk",
         }
       - { label: "Название", name: "name", widget: "string" }
       - { label: "Город", name: "city", widget: "string" }
@@ -88,7 +88,7 @@ collections:
           label: "Шаблон",
           name: "layout",
           widget: "hidden",
-          default: "members.njk",
+          default: "member.njk",
         }
       - { label: "Имя", name: "name", widget: "string" }
       - { label: "Город", name: "city", widget: "string", required: false  }
@@ -214,7 +214,6 @@ collections:
           multiple: true,
           required: false
         }
-      
   - label: "События"
     name: "Events"
     folder: "src/data/events"

@@ -1,7 +1,7 @@
 ---
 id: "3253260941"
 tags: members
-layout: members.njk
+layout: member.njk
 name: Мария Власова
 city: Владимир
 is_part_of_orchestra: false

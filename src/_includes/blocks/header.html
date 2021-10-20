@@ -1,37 +1,25 @@
+{% import "./declarations.njk" as decls %}
 {% macro props(activeTab, isFixed) %}
-    {# {% set tabs = [
-        { text: "Aфиша", link: "/events"},
-        { text: "Галлерея", link: "/albums"},
-        { text: "Новости", link: "/news"},
-        { text: "Состав", link: "/members"},
-        { text: "История", link: "/history"},
-        { text: "Контакты", link: "/contacts"}
-    ] %} #}
-    {% set tabs = [
-        { text: "Главная", link: "/"},
-        { text: "Aфиша", link: "/events"},
-        { text: "История", link: "/history"}
-    ] %}
     {% if isFixed %}
         <header class="header header_fixed">
-        {% else %}
-            <header class="header">
-            {%- endif -%}
-                <div class="logo"></div>
-                <nav class="header__nav">
-                    <ul class="header__list">
-                        {%- for tab in tabs-%}
-                            {% if tab.text == activeTab %}
-                                <li class="header__nav-item header__nav-item_active">
-                                    <a class="header__link link link_theme_header" href="{{tab.link}}">{{tab.text}}</a>
-                                </li>
-                            {% else %}
-                                <li class="header__nav-item">
-                                    <a class="header__link link link_theme_header" href="{{tab.link}}">{{tab.text}}</a>
-                                </li>
-                            {% endif %}
-                        {%- endfor -%}
-                    </ul>
-                </nav>
-            </header>
-        {% endmacro %}
+    {% else %}
+        <header class="header">
+    {%- endif -%}
+        <div class="logo"></div>
+        <nav class="header__nav">
+            <ul class="header__list">
+                {%- for tab in decls.tabs-%}
+                    {% if tab.text == activeTab %}
+                        <li class="header__nav-item header__nav-item_active">
+                            <a class="header__link link link_theme_header" href="{{tab.link}}">{{tab.text}}</a>
+                        </li>
+                    {% else %}
+                        <li class="header__nav-item">
+                            <a class="header__link link link_theme_header" href="{{tab.link}}">{{tab.text}}</a>
+                        </li>
+                    {% endif %}
+                {%- endfor -%}
+            </ul>
+        </nav>
+    </header>
+{% endmacro %}

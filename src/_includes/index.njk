@@ -1,14 +1,10 @@
----
-title: My Rad Blog
----
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/static/typo.css" rel="stylesheet" ></link>
-    <link href="/static/styles.css" rel="stylesheet" ></link>
+    <link href="../../../../static/typo.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles.css" rel="stylesheet" ></link>
 
     <title>{{ title }}</title>
   </head>
@@ -46,11 +42,11 @@ title: My Rad Blog
                 </span>
                 <h3 class="upcomming__title">{{event.data.title}}</h3>
                 <p class="upcomming__description">
-                {{event.data.short_description}} 
+                {{event.data.short_description}}
               </p>
               {% if event.data.price %}
               <span class="upcomming__entrance">Купить</span>
-                
+
                 {% else %}
                   <span class="upcomming__entrance">Вход свободный</span>
                 {% endif %}
@@ -79,7 +75,7 @@ title: My Rad Blog
                 </a> #}
               </li>
             {%- endfor -%}
-            
+
           </ul>
         </section>
         {# <section class="section">

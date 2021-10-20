@@ -1,42 +1,9 @@
-{# {% set tabs = [
-{
-        text: "Главная",
-        link: "/"
-    },
-    {
-        text: "Aфиша",
-        link: "/events"
-    }, {
-        text: "Галлерея",
-        link: "/albums"
-    }, {
-        text: "Новости",
-        link: "/news"
-    }, {
-        text: "Состав",
-        link: "/members"
-    }, {
-        text: "История",
-        link: "/history"
-    }, {
-        text: "Контакты",
-        link: "/contacts"
-    }
-] %} #}
-{% set tabs = [
-    {
-        text: "Главная",
-        link: "/"
-    }, {
-        text: "История",
-        link: "/history"
-    }
-] %}
+{% import "./declarations.njk" as decls %}
 <footer class="footer typo typo_theme_tags">
     <div class="footer__container limiter">
         <p class="footer__copyright">© Крымский оркестр русских народных инструментов им. Г.Г. Шендерева</p>
         <ul class="footer__nav">
-            {%- for tab in tabs-%}
+            {%- for tab in decls.tabs-%}
                 <li class="footer__nav-item">
                     <a class="footer__nav-link" href="{{tab.link}}">
                         <span>{{tab.text}}</span>

@@ -16,17 +16,14 @@
           <span class="afisha__time">{{dateT.time | rusTime}}</span>
         </p>
       {%- endfor -%}
-
       {% if price %}
         <a class="afisha__button button typo typo_theme_plain">Купить билеты</a>
       {% endif %}
-
     </div>
     {% if isFutureEvent %}
       <span class="afisha__nearest typo typo_theme_accent">Ближайшее</span>
     {% elif isLastEvent %}
       <span class="afisha__nearest typo typo_theme_accent">Последнее событие</span>
-    
     {% endif %}
   </div>
 {% endmacro %}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../../static/typo.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles.css" rel="stylesheet" ></link>
+
+    <title>{{ title }}</title>
+  </head>
+  <body class="page page_full-screen">
+    {% import "./blocks/header.html" as header %}
+    {% import "./blocks/caruselMember.html" as caruselMember %}
+    {{ header.props('', false)}}
+    <div class="banner banner_no-after-content page__item">
+      <div class="banner__text">
+        <h1 class="banner__title typo typo_theme_major">{{ title }}</h1>
+        <p class="banner__slogan typo typo_size_m typo_height_m">
+
+        </p>
+      </div>
+    </div>
+    {% include "./blocks/footer.njk" %}
+  </body>
+</html>

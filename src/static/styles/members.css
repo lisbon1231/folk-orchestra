@@ -1,0 +1,11 @@
+.members__list {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.members {
+    overflow-y: auto;
+}

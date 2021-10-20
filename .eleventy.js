@@ -10,7 +10,7 @@ const IntlR = require("intl")
 
 //     return dateFormater.format(date).slice(0, -3)
 // });
-  
+
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/static')
     eleventyConfig.addWatchTarget('./src/static')
@@ -37,7 +37,7 @@ module.exports = function (eleventyConfig) {
         })
 
         console.log(arr)
-        
+
         const formatOptions = { day: 'numeric', month: 'long', timeZone: 'UTC' }
         const dateFormater = new IntlR.DateTimeFormat('ru', formatOptions);
 
