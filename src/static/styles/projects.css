@@ -1,0 +1,30 @@
+.projects__list {
+    padding: 20px;
+    display: grid;
+    grid-area: 10px;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.projects__project {
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    max-width: 320px;
+}
+
+.projects__project-banner {
+    width: 100%;
+    object-fit: cover;
+}
+
+.projects__project-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}

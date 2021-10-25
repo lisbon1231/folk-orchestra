@@ -1,0 +1,32 @@
+{% import "./blocks/header.html" as header %}
+{% import "./blocks/caruselMember.html" as caruselMember %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../../static/typo.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles/projects.css" rel="stylesheet" ></link>
+
+    <title>{{ title }}</title>
+  </head>
+  <body class="page">
+    <div class="page__content page__content_full-screen">
+      {{ header.props('', true)}}
+      <main class="projects">
+        <ul class="projects__list">
+          {%- for project in collections.projects -%}
+            <a href="{{project.fileSlug}}" class="projects__project">
+                <img src="{{project.data.banner}}" class="projects__project-banner">
+                <span class="projects__project-name">{{project.data.title}}</span>
+            </a>
+          {%- else -%}
+            <div class="projects__empty">Нет проектов</div>
+          {%- endfor -%}
+        </ul>
+      </main>
+      {% include "./blocks/footer.njk" %}
+    </div>
+  </body>
+</html>

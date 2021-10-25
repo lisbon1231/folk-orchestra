@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/typo.css" rel="stylesheet" ></link>
+    <link href="/static/styles.css" rel="stylesheet" ></link>
+    <title>{{ title }}</title>
+  </head>
+  <body class="page">
+    <div class="page__content">
+      {% import "./blocks/header.html" as header %}
+      {% import "./blocks/caruselMember.html" as caruselMember %}
+      {% import "./blocks/afishaBanner.html" as afishaBanner %}
+      {{ header.props('', true) }}
+      <div class="afisha">
+        {{ afishaBanner.props(banner, eventtags, title, short_description) }}
+        <div class="afisha__container afisha__description-container afisha__description-container_short">
+          <div class="afisha__description-controls">
+            <div class="afisha__control link typo typo_theme_accent">
+              <span class="afisha__control-text" alternativeText='Скрыть'>Показать больше</span>
+              <span class="afisha__info-list-item-text-arrow afisha__info-list-item-text-arrow_dir_bottom"></span>
+            </div>
+          </div>
+          <div class="afisha__full-description typo typo_theme_plain">
+            {{ content | safe }}
+          </div>
+        </div>
+      </div>
+      {% include "./blocks/footer.njk" %}
+    </div>
+    <script type="text/javascript" src="../../../../static/event.js"></script>
+    <script type="text/javascript" src="../../../../static/show-more.js"></script>
+  </body>
+</html>

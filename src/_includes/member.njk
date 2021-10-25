@@ -34,7 +34,7 @@
             {%- endif -%}
           </div>
         </div>
-        <div class="member-details__history">{{history}}</div>
+        <div class="member-details__history">{{history | safe}}</div>
       </main>
       {% include "./blocks/footer.njk" %}
     </div>

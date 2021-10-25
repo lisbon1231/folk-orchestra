@@ -150,6 +150,41 @@ collections:
     #   search_fields: ["title", "date"]
     #   display_fields: ["{{title}} - {{date}}"]
     #   multiple: true
+
+  - label: "Проекты"
+    name: "projects"
+    folder: "src/data/projects"
+    create: true
+    slug: "{{fields.id}}"
+    fields:
+      - { name: id, label: Id, widget: generateId }
+      - { label: "Коллекция", name: "tags", widget: "hidden", default: "projects" }
+      - {
+          label: "Шаблон",
+          name: "layout",
+          widget: "hidden",
+          default: "projects.njk",
+        }
+      - { label: "Название", name: "title", widget: "string" }
+      - {
+          label: "Короткое описание",
+          name: "short_description",
+          widget: "markdown",
+        }
+      - {
+          label: "Подробное Описание",
+          name: "body",
+          widget: "markdown",
+        }
+      - { label: "Тэги", name: "eventtags", widget: "list", allow_add: true }
+      - {
+          label: "Баннер",
+          name: "banner",
+          widget: "image",
+          allow_multiple: false,
+          media_folder: "banner",
+        }
+
   - label: "Составы оркеста Шендерева"
     name: "current_band"
     folder: "src/data/current_band"
