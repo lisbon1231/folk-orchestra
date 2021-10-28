@@ -1,5 +1,5 @@
 {% import "./blocks/header.html" as header %}
-{% import "./blocks/caruselMember.html" as caruselMember %}
+{% import "./blocks/caruselAlbum.njk" as caruselAlbum %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../../../static/typo.css" rel="stylesheet" ></link>
     <link href="../../../../static/styles.css" rel="stylesheet" ></link>
-    <link href="../../../../static/styles/projects.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles/gallery.css" rel="stylesheet" ></link>
 
     <title>{{ title }}</title>
   </head>
@@ -15,14 +15,11 @@
     <div class="page__content page__content_full-screen">
       {{ header.props('Проекты', true)}}
       <main class="projects">
-        <ul class="projects__list">
+        <ul class="gallery gallery_blog">
           {%- for project in collections.projects -%}
-            <a href="{{project.fileSlug}}" class="projects__project">
-                <img src="{{project.data.banner}}" class="projects__project-banner">
-                <span class="projects__project-name">{{project.data.title}}</span>
-            </a>
+            {{caruselAlbum.props(project.data.banner, false, project.data.title, false, false, project.fileSlug)}}
           {%- else -%}
-            <div class="projects__empty">Нет проектов</div>
+            <div class="gallery__item typo typo_theme_major">Нет проектов</div>
           {%- endfor -%}
         </ul>
       </main>

@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
             return dateA - dateB
         })
 
-        console.log(arr)
+        // console.log(arr)
 
         const formatOptions = { day: 'numeric', month: 'long', timeZone: 'UTC' }
         const dateFormater = new IntlR.DateTimeFormat('ru', formatOptions);
@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addNunjucksFilter("sortByField", function (arr, field) {
-        return arr.find(item => item.template.frontMatter.data.id === id)
+        return arr.find(item => item.template.frontMatter.data.id === field)
     });
 
     return {
