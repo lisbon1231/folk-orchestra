@@ -1,0 +1,32 @@
+{% macro inner(img, isModal, title, description, date) %}
+    {% if isModal %}
+        <img src="{{img}}" class="album-preview__picture modal-image"/>
+    {% else %}
+        <img src="{{img}}" class="album-preview__picture"/>
+    {% endif %}
+    {% if title or description or date %}
+        <div class="album-preview__description">
+            {% if title %}
+                <p class="album-preview__title">
+                    {{title}}
+                    {% if description %}
+                        : <span class="album-preview__info">{{description}}</span>
+                    {% endif %}
+                </p>
+            {% endif %}
+            <div class="album-preview__date">{{date | rusDate}}</div>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro props(img, isModal, title, description, date, href) %}
+    {% if href %}
+        <a class="link typo typo_theme_tags gallery__item album-preview" href="{{href}}">
+            {{inner(img, isModal, title, description, date)}}
+        </a>
+    {% else %}
+        <li class="gallery__item album-preview">
+            {{inner(img, isModal, title, description, date)}}
+        </li>
+    {% endif %}
+{% endmacro %}

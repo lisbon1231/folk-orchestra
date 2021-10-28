@@ -11,18 +11,18 @@
   </head>
   <body class="page">
     <div class="page__content">
-
       {% import "./blocks/header.html" as header %}
       {% import "./blocks/caruselAlbum.njk" as caruselAlbum %}
 
-      {{ header.props('Галлерея', true) }}
-      <ul class="gallery gallery_blog">
-        {%- for albumWrapper in collections.albums -%}
-          {% set album = albumWrapper.data %}
-          {{caruselAlbum.props(album.poster, false, album.title, album.description, album.date, albumWrapper.fileSlug)}}
+      {{ header.props('', true) }}
+      <ul class="gallery gallery_photopedia">
+        {{caruselAlbum.props(poster, true, title, description, date)}}
+        {%- for photo in photos -%}
+            {{caruselAlbum.props(photo, true)}}
         {%- endfor -%}
       </ul>
       {% include "./blocks/footer.njk" %}
+      {% include "./blocks/modal.njk" %}
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

@@ -78,7 +78,7 @@
                   </li>
                 {% endif %}
               </ul>
-              <img class="afisha__afisha" src="{{poster}}"/>
+              <img class="afisha__afisha modal-image" src="{{poster}}"/>
             </div>
           </div>
         </section>
@@ -131,13 +131,8 @@
         </section>
       </div>
       {% include "./blocks/footer.njk" %}
-      <div class="modal">
-        <div class="modal__container">
-          <img src="{{poster}}" class="modal__img"/>
-        </div>
-      </div>
+      {% include "./blocks/modal.njk" %}
     </div>
-    <script type="text/javascript" src="/static/event.js"></script>
     <script type="text/javascript" src="/static/show-more.js"></script>
   </body>
 </html>

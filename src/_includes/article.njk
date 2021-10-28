@@ -30,7 +30,7 @@
                     <ul class="article__images-list limiter limiter_small">
                         {%- for image in images-%}
                             <li class="article__images-item">
-                                <img src="/static/{{image}}" class="article__image"/>
+                                <img src="/static/{{image}}" class="article__image modal-image"/>
                             </li>
                         {%- endfor -%}
                     </ul>
@@ -38,11 +38,6 @@
             </section>
             {% include "./blocks/footer.njk" %}
         </div>
-        <div class="modal">
-            <div class="modal__container">
-                <img src="" class="modal__img"/>
-            </div>
-        </div>
-        <script src="../../../../static/article.js"></script>
+        {% include "./blocks/modal.njk" %}
     </body>
 </html>

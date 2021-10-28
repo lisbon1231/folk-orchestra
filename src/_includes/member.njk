@@ -17,7 +17,7 @@
       <main class="member-details typo typo_theme_plain">
         <div class="member-details__info">
           {% if photo %}
-            <img src="{{photo}}" class="member-details__image"/>
+            <img src="{{photo}}" class="member-details__image modal-image"/>
           {% else %}
             <img src="/static/default_avatar.jpeg" class="member-details__image"/>
           {% endif %}
@@ -37,6 +37,7 @@
         <div class="member-details__history">{{history | safe}}</div>
       </main>
       {% include "./blocks/footer.njk" %}
+      {% include "./blocks/modal.njk" %}
     </div>
   </body>
 </html>
