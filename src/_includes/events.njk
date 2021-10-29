@@ -25,47 +25,44 @@
                     <label class="form__label form__label_type_search">
                         <input class="form__input typo typo_theme_small" type="text" name="search_text" placeholder="Поиск"/>
                     </label>
-                    <label class="typo typo_theme_small form__label_type_sort">
+                    <label class="typo typo_theme_small form__label_type_sort form__label_sort_up">
                         <span>Сортировать по</span>
-                        {# <select class="form__select">
-                            <option value="">Убыванию</option>
-                            <option value="">Возрастанию</option>
-                        </select> #}
                     </label>
                 </form>
             </div>
 
             <ul class="events-list">
-                {%- for event in collections.events -%}
+                {% set events = collections.events | sortByField("dateTime.0._date", "up") %}
+                {%- for event in events -%}
                     {% set isFutureEvent = event.data.dateTime | isFutureEvent %}
                     {% if event.data.price %}
-                        <li class="event-preview">
-                        {% else %}
-                            <li class="event-preview event-preview_past">
-                            {% endif %}
-                            <a class="event-preview__link" href="{{event.url}}">
-                                <img src="{{event.data.banner}}" class="event-preview__picture"/>
-                                <div class="event-preview__description">
-                                    <h3 class="event-preview__title typo typo_theme_plain">{{event.data.title}}</h3>
-                                    <p class="event-preview__info">{{event.data.short_description}}</p>
-                                    <p class="event-preview__info typo typo_theme_light">{{event.data.place}}</p>
-                                    {% if event.data.price %}
-                                        <div class="afisha__button button typo typo_theme_tags">Купить билеты</div>
-                                    {% endif %}
-                                </div>
-                                {% if isFutureEvent %}
-                                    <div class="event-preview__date event-preview__date_accent">
-                                {% else %}
-                                    <div class="event-preview__date">
+                        <li class="event-preview" data-title="{{event.data.title}}">
+                    {% else %}
+                        <li class="event-preview event-preview_past" data-title="{{event.data.title}}">
+                    {% endif %}
+                        <a class="event-preview__link" href="{{event.url}}">
+                            <img src="{{event.data.banner}}" class="event-preview__picture"/>
+                            <div class="event-preview__description">
+                                <h3 class="event-preview__title typo typo_theme_plain">{{event.data.title}}</h3>
+                                <p class="event-preview__info">{{event.data.short_description}}</p>
+                                <p class="event-preview__info typo typo_theme_light">{{event.data.place}}</p>
+                                {% if event.data.price %}
+                                    <div class="afisha__button button typo typo_theme_tags">Купить билеты</div>
                                 {% endif %}
-                                    {%- for dateTime in event.data.dateTime -%}
-                                        <div class="event-preview__date-row">{{dateTime._date | rusDate}}, {{dateTime.time | rusTime}}</div>
-                                    {%- endfor -%}
-                                </div>
-                            </a>
-                        </li>
-                    {%- endfor -%}
-                </ul>
+                            </div>
+                            {% if isFutureEvent %}
+                                <div class="event-preview__date event-preview__date_accent">
+                            {% else %}
+                                <div class="event-preview__date">
+                            {% endif %}
+                                {%- for dateTime in event.data.dateTime -%}
+                                    <div class="event-preview__date-row">{{dateTime._date | rusDate}}, {{dateTime.time | rusTime}}</div>
+                                {%- endfor -%}
+                            </div>
+                        </a>
+                    </li>
+                {%- endfor -%}
+            </ul>
 
                 {% include "./blocks/footer.njk" %}
             </div>
@@ -73,7 +70,6 @@
             <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
             <script type="text/javascript" src="../../../../static/vendors/slick.min.js"></script>
-            <script type="text/javascript" src="../../../../static/event.js"></script>
-            <script type="text/javascript" src="../../../../static/show-more.js"></script>
+            <script type="text/javascript" src="../../../../static/events.js"></script>
         </body>
     </html>

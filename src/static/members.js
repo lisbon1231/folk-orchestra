@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const membersList = document.body.querySelector('.members__list');
+    const searchbar = document.body.querySelector('.searchbar');
     const input = document.body.querySelector('.form__input');
     if (!membersList || !input) return;
 

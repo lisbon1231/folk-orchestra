@@ -11,6 +11,8 @@ const IntlR = require("intl")
 //     return dateFormater.format(date).slice(0, -3)
 // });
 
+const get = (obj, path) => path.split('.').reduce((acc, path) => acc[path], obj);
+
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('./src/static')
     eleventyConfig.addWatchTarget('./src/static')
@@ -47,8 +49,14 @@ module.exports = function (eleventyConfig) {
         return `${dateFormater.format(start)} - ${dateFormater.format(end)} ${end.getFullYear()}`
     });
 
-    eleventyConfig.addNunjucksFilter("sortByField", function (arr, field) {
-        return arr.find(item => item.template.frontMatter.data.id === field)
+    eleventyConfig.addNunjucksFilter("sortByField", function (arr, field, mode = 'down') {
+        return arr.sort((a, b) => {
+            if (field.includes('date')) {
+                return (+new Date(get(a.data, field)) - +new Date(get(b.data, field))) * (mode === 'down' ? 1 : -1);
+            }
+
+            return (get(a.data, field) > get(b.data, field) ? 1 : -1) * (mode === 'down' ? 1 : -1)
+        })
     });
 
     return {

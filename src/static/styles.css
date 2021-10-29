@@ -1305,6 +1305,10 @@ p.intro__main-text:before {
     transform: rotate(90deg);
 }
 
+.form__label_sort_up::after {
+    transform: rotate(-90deg);
+}
+
 .afisha__nearest {
     position: absolute;
     top: 3vw;
