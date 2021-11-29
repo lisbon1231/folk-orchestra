@@ -266,6 +266,24 @@ collections:
           multiple: true,
           required: false
         }
+
+  - {
+    label: "Новости",
+    name: "news",
+    folder: "src/data/news",
+    create: true,
+    slug: "{{fields.id}}",
+    fields:
+      - { name: id, label: Id, widget: generateId }
+      - { label: "Коллекция", name: "tags", widget: "hidden", default: "news" }
+      - { label: "Шаблон", name: "layout", widget: "hidden", default: "news.njk" }
+      - { label: "Название", name: "title", widget: "string" }
+      - { label: "Короткое описание", name: "short_description", widget: "markdown" }
+      - { label: "Подробное описание", name: "description", widget: "markdown" }
+      - { label: "Дата", name: "date", widget: "datetime" }
+      - { label: "Постер", name: "poster", widget: "image", media_folder: "posters", allow_multiple: false }
+  }
+
   - label: "События"
     name: "Events"
     folder: "src/data/events"
