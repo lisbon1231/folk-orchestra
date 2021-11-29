@@ -21,6 +21,12 @@
     grid-gap: 5px;
 }
 
+@media (max-width: 1050px) {
+    .gallery.gallery_photopedia {
+        grid-template-columns: 1fr;
+    }
+}
+
 .gallery_photopedia .gallery__item:first-child {
     grid-area: 2 span / 2 span;
 }
