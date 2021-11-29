@@ -10,3 +10,9 @@
 .members {
     overflow-y: auto;
 }
+
+@media (max-width: 1200px) {
+    .members {
+        min-height: 100vh;
+    }
+}

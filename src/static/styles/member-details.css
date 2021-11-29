@@ -23,3 +23,9 @@
 .member-details__history {
     margin-top: 20px;
 }
+
+@media (max-width: 1200px) {
+    .member-details__image {
+        min-width: 80px;
+    }
+}

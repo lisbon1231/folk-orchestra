@@ -623,6 +623,24 @@ p.intro__main-text:before {
     line-height: 28px;
 }
 
+@media (max-width: 1200px) {
+    .footer {
+        min-height: auto;
+    }
+
+    .footer__container {
+        flex-direction: column;
+    }
+
+    .footer__copyright {
+        width: 100%;
+    }
+
+    .footer__nav {
+        display: none;
+    }
+}
+
 .page__content {
     min-height: 100vh;
     display: flex;
@@ -638,6 +656,12 @@ p.intro__main-text:before {
 .page__content_full-screen {
     max-height: 100vh;
     min-height: 100vh;
+}
+
+@media (max-width: 1200px) {
+    .page__content_full-screen {
+        max-height: none;
+    }
 }
 
 .afisha__banner {
