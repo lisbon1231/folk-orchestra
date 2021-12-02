@@ -28,4 +28,14 @@
     .member-details__image {
         min-width: 80px;
     }
+
+    .member-details {
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .member-details {
+        max-width: 90vw;
+    }
 }

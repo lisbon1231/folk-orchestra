@@ -101,6 +101,16 @@
     }
 }
 
+@media (max-width: 650px) {
+    .limiter {
+        max-width: 90vw;
+    }
+
+    .limiter_small {
+        width: 90vw;
+    }
+}
+
 .intro {
     padding-top: 44px;
     padding-bottom: 44px;
@@ -121,7 +131,7 @@
     box-sizing: border-box;
 }
 
-p.intro__main-text:before {
+.intro__main-text:before {
     content: "";
     display: block;
     position: absolute;
@@ -166,6 +176,30 @@ p.intro__main-text:before {
 
 .intro__link-details:hover:after {
     opacity: 1;
+}
+
+@media (max-width: 1200px) {
+    .intro {
+        padding: 0;
+        flex-direction: column;
+
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 5px;
+    }
+
+    .intro__main-text {
+        font-size: 16px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .intro__main-text::before {
+        display: none;
+    }
+
+    .intro__link-details {
+        font-size: 18px;
+    }
 }
 
 .upcomming {
@@ -379,6 +413,20 @@ p.intro__main-text:before {
     transition: 0.5s;
 }
 
+@media (max-width: 1200px) {
+    .upcomming {
+        flex-direction: column;
+    }
+
+    .upcomming__item {
+        width: 100%;
+    }
+
+    .upcomming__title {
+        font-size: 18px;
+    }
+}
+
 /* хаки хаки */
 
 .slick-track {
@@ -483,6 +531,44 @@ p.intro__main-text:before {
 
 .news__link {
     margin-left: 24px;
+}
+
+@media (max-width: 1200px) {
+    .news {
+        flex-direction: column;
+    }
+
+    .news__item {
+        width: 100%;
+        border: 1px solid #eeeeee;
+        border-left: none;
+        border-right: none;
+    }
+
+    .news__img {
+        display: none;
+    }
+
+    .news__link-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news__link {
+        margin-left: 0;
+    }
+
+    .news__link-text {
+        width: auto;
+        min-width: 0;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 650px) {
+    .news__desciption {
+        padding: 20px 10px;
+    }
 }
 
 .footer {
@@ -1224,6 +1310,13 @@ p.intro__main-text:before {
     opacity: 0.8;
 }
 
+@media (max-width: 1200px) {
+    .event-preview {
+        grid-row: span 4;
+        grid-column: span 2;
+    }
+}
+
 .form__input,
 .form__input:hover,
 .form__input:focus {
@@ -1418,6 +1511,37 @@ p.intro__main-text:before {
     }
 }
 
+@media (max-width: 1200px) {
+    .banner {
+        height: 100vh;
+        background-position: top center;
+        background-size: 300%;
+    }
+}
+
+@media (max-width: 550px) {
+    .banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: 500%;
+    }
+
+    .banner__text {
+        position: relative;
+        left: auto;
+        bottom: auto;
+    }
+
+    .banner__title {
+        font-size: 22px;
+    }
+
+    .banner__slogan {
+        font-size: 18px;
+    }
+}
+
 .afisha__container {
     position: relative;
 }
@@ -1489,6 +1613,90 @@ p.intro__main-text:before {
     max-height: 10000px;
     transition: 2s;
 } */
+
+@media (max-width: 1200px) {
+    .afisha__banner {
+        justify-content: flex-start;
+    }
+
+    .afisha__banner-info {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .afisha__short-description {
+        margin-bottom: 10px;
+        line-height: 16px;
+    }
+
+    .afisha__datetime {
+        margin: 5px 0;
+    }
+
+    .afisha__tags-list {
+        max-width: 100%;
+    }
+
+    .afisha__nearest {
+        left: 10px;
+        bottom: 10px;
+        top: auto;
+    }
+
+    .afisha__title {
+        font-size: 22px;
+    }
+
+    .afisha__container {
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .afisha__info-list {
+        padding-right: 0;
+    }
+
+    .afisha__banner {
+        height: 50vh;
+        padding-right: 10px;
+    }
+
+    .afisha__nearest {
+        display: none;
+    }
+
+    .afisha__container {
+        max-width: 90vw;
+    }
+
+    .afisha__info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .afisha__afisha {
+        margin-top: 30px;
+    }
+
+    .afisha__programm-info {
+        flex-direction: column;
+    }
+
+    .afisha__composers-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .afisha__composer {
+        text-align: left;
+        margin-right: 10px;
+    }
+
+    .afisha__subtitle {
+        margin-bottom: 10px;
+    }
+}
 
 .hidden {
     display: none;

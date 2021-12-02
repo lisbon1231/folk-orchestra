@@ -34,6 +34,12 @@
         background-color: white;
     }
 
+    .header__nav-item {
+        box-sizing: border-box;
+        line-height: 48px;
+        font-weight: 500;
+    }
+
     .header_active {
         display: flex;
     }
