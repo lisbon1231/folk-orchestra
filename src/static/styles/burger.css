@@ -22,7 +22,7 @@
     transition: all 0.2s linear;
 }
 
-@media (max-height: 1200px) {
+@media (max-width: 1200px) {
     .header {
         display: none;
         position: fixed;
