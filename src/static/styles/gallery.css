@@ -263,3 +263,20 @@
 .album-preview:hover {
     opacity: 0.8;
 }
+
+@media (max-width: 1200px) {
+    .gallery_blog .gallery__item:first-child {
+        grid-column: 1;
+    }
+
+    .gallery.gallery_blog {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .album-preview__title,
+    .album-preview__info {
+        font-size: 16px;
+    }
+}
