@@ -1,4 +1,4 @@
-{% import "./blocks/caruselAlbum.njk" as caruselAlbum %}
+{% import "./blocks/afishaBanner.html" as afishaBanner %}
 {% import "./blocks/header.html" as header %}
 <!doctype html>
 <html lang="en">
@@ -7,30 +7,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../../../static/typo.css" rel="stylesheet" ></link>
         <link href="../../../static/styles.css" rel="stylesheet" ></link>
-        <link href="../../../static/styles/gallery.css" rel="stylesheet" ></link>
         <title>{{ title }}</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet"/>
     </head>
     <body class="page">
         <div class="page__content">
-            {{ header.props('Новости', true) }}
+            {{ header.props('', true) }}
 
-            <div class="page__item_centered">
-                <ul class="gallery gallery_blog">
-                    {% for singleNews in collections.news %}
-                        {{caruselAlbum.props(
-                            singleNews.data.poster,
-                            false,
-                            singleNews.data.title,
-                            singleNews.data.short_description,
-                            singleNews.data.dateTime,
-                            singleNews.fileSlug
-                        )}}
-                    {% endfor %}
-                </ul>
+            <div class="afisha">
+                {{ afishaBanner.props(poster, false, title, short_description, dateTime) }}
+                <div class="afisha__container afisha__description-container afisha__description-container_short">
+                    <div class="typo typo_theme_plain">
+                        {{ content | safe }}
+                    </div>
+                </div>
             </div>
 
             {% include "./blocks/footer.njk" %}
+            {% include "./blocks/modal.njk" %}
         </div>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

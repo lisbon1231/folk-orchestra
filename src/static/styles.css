@@ -744,6 +744,12 @@
     min-height: 100vh;
 }
 
+.page__item_centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (max-width: 1200px) {
     .page__content_full-screen {
         max-height: none;

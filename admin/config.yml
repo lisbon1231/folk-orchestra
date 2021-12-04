@@ -268,17 +268,17 @@ collections:
         }
 
   - label: "Новости"
-    name: "news"
+    name: "News"
     folder: "src/data/news"
     create: true
     slug: "{{fields.id}}"
     fields:
       - { name: id, label: Id, widget: generateId }
       - { label: "Коллекция", name: "tags", widget: "hidden", default: "news" }
-      - { label: "Шаблон", name: "layout", widget: "hidden", default: "news.njk" }
+      - { label: "Шаблон", name: "layout", widget: "hidden", default: "news-single.njk" }
       - { label: "Название", name: "title", widget: "string" }
       - { label: "Короткое описание", name: "short_description", widget: "markdown" }
-      - { label: "Подробное описание", name: "description", widget: "markdown" }
+      - { label: "Подробное описание", name: "body", widget: "markdown" }
       - { label: "Дата", name: "date", widget: "datetime" }
       - { label: "Постер", name: "poster", widget: "image", media_folder: "posters", allow_multiple: false }
 
