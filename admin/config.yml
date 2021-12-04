@@ -12,6 +12,62 @@ media_library:
     multiple: true
 public_folder: "/uploads"
 collections:
+  - label: "Про оркестр"
+    name: "pages"
+    files:
+      - label: "Про оркестр"
+        name: "About"
+        file: "src/data/index.md"
+        create: true
+        slug: "index"
+        fields:
+          - { label: "Коллекция", name: "tags", widget: "hidden", default: "info" }
+          - { label: "Шаблон", name: "layout", widget: "hidden", default: "index" }
+          - { label: "Название", name: "title", widget: "string" }
+          - {
+              label: "Краткое описание",
+              name: "short_description",
+              widget: "string",
+            }
+          - {
+              label: "Среднее описание",
+              name: "middle_description",
+              widget: "markdown",
+            }
+          - {
+              label: "Полное описание",
+              name: "long_description",
+              widget: "markdown",
+            }
+
+  - label: "Контакты"
+    name: "Contacts"
+    files:
+      - label: "Контакты"
+        name: "Contacts"
+        file: "src/data/concats.md"
+        create: true
+        slug: "contacts"
+        fields:
+          - { label: "Коллекция", name: "tags", widget: "hidden", default: "contacts" }
+          - { label: "Шаблон", name: "layout", widget: "hidden", default: "conctacts.njk" }
+          - { label: "Местоположение", name: "location", widget: "string" }
+          - { label: "Название", name: "title", widget: "string" }
+          - label: "Номера телефона"
+            name: "phones"
+            widget: "list"
+            allow_add: true
+            fields:
+              - { label: "Номер телефона", name: "phone_number", widget: "string", required: true }
+              - { label: "Кому звонят", name: "phone_owner", widget: "string" }
+          - label: "Почтовые адреса"
+            name: "emails"
+            widget: "list"
+            allow_add: true
+            fields:
+              - { label: "Почтовый адрес", name: "email", widget: "string", required: true }
+              - { label: "Кому пишут", name: "email_owner", widget: "string" }
+
   - label: "Альбомы"
     name: "albums"
     folder: "src/data/albums"
@@ -63,6 +119,7 @@ collections:
           }
         }
       }
+
   - label: "Ансамбли"
     name: "ensemble"
     folder: "src/data/ensembles"
@@ -220,6 +277,7 @@ collections:
           display_fields: ["name"],
           multiple: true
       }
+
   - label: "Составы для выступлений"
     name: "Bands"
     folder: "src/data/bands"
@@ -386,31 +444,6 @@ collections:
           media_folder: "banner",
         }
 
-  - label: "Про оркестр"
-    name: "About"
-    folder: "src/data"
-    create: true
-    slug: "index"
-    fields:
-      - { name: id, label: Id, widget: generateId }
-      - { label: "Коллекция", name: "tags", widget: "hidden", default: "info" }
-      - { label: "Шаблон", name: "layout", widget: "hidden", default: "index" }
-      - { label: "Название", name: "title", widget: "string" }
-      - {
-          label: "Краткое описание",
-          name: "short_description",
-          widget: "string",
-        }
-      - {
-          label: "Среднее описание",
-          name: "middle_description",
-          widget: "markdown",
-        }
-      - {
-          label: "Полное описание",
-          name: "long_description",
-          widget: "markdown",
-        }
   - label: "В честь"
     name: "inhonor"
     folder: "src/data/history"
@@ -423,15 +456,19 @@ collections:
       - { label: "Главное фото", name: "mainphoto", widget: "image", allow_multiple: false }
       - { label: "Цитаты", name: "quotes", widget: "string" }
       - { label: "Картинки", name: "images", widget: "image", allow_multiple: true }
+
   - label: "История"
     name: "history"
-    folder: "src/data"
-    create: true
-    slug: "history"
-    fields:
-      - { name: id, label: Id, widget: generateId }
-      - { label: "Коллекция", name: "tags", widget: "hidden", default: "history" }
-      - { label: "Шаблон", name: "layout", widget: "hidden", default: "article.njk" }
-      - { label: "Заголовок", name: "title", widget: "string" }
-      - { label: "История", name: "body", widget: "markdown" }
-      - { label: "Картинки", name: "images", widget: "image", allow_multiple: true }
+    files:
+      - label: "История"
+        name: "history"
+        file: "src/data/history.md"
+        create: true
+        slug: "history"
+        fields:
+          - { name: id, label: Id, widget: generateId }
+          - { label: "Коллекция", name: "tags", widget: "hidden", default: "history" }
+          - { label: "Шаблон", name: "layout", widget: "hidden", default: "article.njk" }
+          - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "История", name: "body", widget: "markdown" }
+          - { label: "Картинки", name: "images", widget: "image", allow_multiple: true }

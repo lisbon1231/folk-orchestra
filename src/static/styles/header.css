@@ -29,11 +29,10 @@
 
 .header__nav-item_active {
     background-color: #9fa628;
-    color: #fff;
 }
 
 .header__nav-item_active .header__link {
-    color: inherit;
+    color: #fff !important;
 }
 
 .header__nav-item:hover {
@@ -76,4 +75,10 @@
     padding-right: 24px;
     display: block;
     height: 100%;
+}
+
+@media (max-width: 1400px) {
+    .header {
+        padding: 0;
+    }
 }

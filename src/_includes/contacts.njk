@@ -1,0 +1,23 @@
+{% import "./blocks/header.html" as header %}
+{% import "./blocks/caruselMember.html" as caruselMember %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../../static/typo.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles.css" rel="stylesheet" ></link>
+    <link href="../../../../static/styles/member-details.css" rel="stylesheet" ></link>
+
+    <title>{{ title }}</title>
+  </head>
+  <body class="page">
+    <div class="page__content">
+      {{ header.props('Контакты', true)}}
+      <main class="contacts">
+      </main>
+      {% include "./blocks/footer.njk" %}
+      {% include "./blocks/modal.njk" %}
+    </div>
+  </body>
+</html>
