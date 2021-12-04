@@ -10,3 +10,5 @@ emails:
     - email: "valeksevastopol@mail.ru"
       email_owner: "Валентин Лобанов"
 ---
+
+## [Положение на Яндекс.Картах](https://yandex.ru/maps/-/CCUurRGAxA)

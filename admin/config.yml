@@ -52,6 +52,7 @@ collections:
           - { label: "Коллекция", name: "tags", widget: "hidden", default: "contacts" }
           - { label: "Шаблон", name: "layout", widget: "hidden", default: "conctacts.njk" }
           - { label: "Местоположение", name: "location", widget: "string" }
+          - { label: "Как нас найти", name: "body", widget: "markdown" }
           - { label: "Название", name: "title", widget: "string" }
           - label: "Номера телефона"
             name: "phones"
