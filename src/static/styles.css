@@ -491,14 +491,10 @@
     border-right: 2px solid #f9f9f9;
 }
 
-.news__item_right .news__img {
+.news .news__item:nth-child(2) .news__img {
     float: right;
     shape-outside: polygon(200px 0, 200px 400px, 50px 200px);
     clip-path: polygon(200px 0, 200px 400px, 50px 200px);
-}
-
-.news__item_right .news__desciption {
-    /* text-align: right; */
 }
 
 .news__links {

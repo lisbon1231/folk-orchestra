@@ -54,46 +54,29 @@
         {%- endfor -%}
       </ul>
     </section>
-    <section class="section">
-      <h2 class="section__title limiter typo typo_theme_subtitle">Новости</h2>
-      <ul class="news">
-        <li class="news__item">
-          <img src="../../../../static/uploads/bla.jpeg" class="news__img">
-          <div class="news__desciption">
-            <h3 class="news__title">Оркестр им.Г.Шендерева исполнит Гимн России на стадионе «Газпром-Арена»</h3>
-            <p class="news__text">1 сентября 2019 года артисты оркестра русских народных инструментов им.Г.Шендерева примут участие в общенациональной акции - массовом исполнении гимна в составе сводного симфонического оркестра из 10 тысяч музыкантов, участников творческих коллективов...</p>
-            <ul class="news__links">
-              <li class="news__link-item">
-                <p class="news__link-text">Читать дальше</p>
-                <a class="news__link typo typo_theme_accent">mysupersite.io/articles/12842</a>
-              </li>
-              <li class="news__link-item">
-                <p class="news__link-text">Источник</p>
-                <a class="news__link typo typo_theme_accent">astrograph.io</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="news__item news__item_right">
-          <img src="../../../../static/uploads/bla3.jpeg" class="news__img">
-          <div class="news__desciption">
-            <h3 class="news__title">Начался приём заявок в российскую музыкальную базу данных и карту МузGIS.</h3>
-            <p class="news__text">Заносится (бесплатно) информация о вашей деятельности и услугах, которой пользуются заказчики, продюсеры и организаторы мероприятий.</p>
-            <p class="news__text">Если вы пожелаете воспользоваться этой возможностью, буду ждать вашего ответа!</p>
-            <ul class="news__links">
-              <li class="news__link-item">
-                <p class="news__link-text">Читать дальше</p>
-                <a class="news__link typo typo_theme_accent">mysupersite.io/articles/12842</a>
-              </li>
-              <li class="news__link-item">
-                <p class="news__link-text">Источник</p>
-                <a class="news__link typo typo_theme_accent">astrograph.io</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </section>
+    {% set news = collections.news | sortByField("dateTime", "up") %}
+    {% if (news | length) >= 2 %}
+      <section class="section">
+        <h2 class="section__title limiter typo typo_theme_subtitle">Новости</h2>
+        <ul class="news">
+          {% for singleNews in [news[0], news[1]] %}
+            <li class="news__item">
+              <img src="{{singleNews.data.poster}}" class="news__img">
+              <div class="news__desciption">
+                <h3 class="news__title">{{singleNews.data.title}}</h3>
+                <p class="news__text">{{singleNews.data.short_description}}</p>
+                <ul class="news__links">
+                  <li class="news__link-item">
+                    <p class="news__link-text">Читать дальше</p>
+                    <a class="news__link typo typo_theme_accent" href="/news/{{singleNews.fileSlug}}">/news/{{singleNews.fileSlug}}</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
     {% include "./blocks/footer.njk" %}
   </body>
 </html>
