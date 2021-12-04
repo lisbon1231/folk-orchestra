@@ -12,7 +12,7 @@
         <div class="page__content">
             {% import "./blocks/header.html" as header %}
             {% import "./blocks/afishaBanner.html" as afishaBanner %}
-            {{ header.props('Aфиша', true) }}
+            {{ header.props('Новости', true) }}
 
             {% set mainEvent = collections.events[0].data %}
             {% set isFutureEvent = mainEvent.dateTime | isFutureEvent %}
