@@ -14,12 +14,29 @@
     display: flex;
 }
 
+.contacts__phone-owner,
+.contacts__email-owner {
+    margin-right: 10px;
+}
+
 .contacts__phone-number,
 .contacts__email-address {
     text-decoration: none;
-    margin-left: 10px;
 }
 
 .contacts__location {
     margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .contacts__phone-owner,
+    .contacts__email-owner {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .contacts-wrapper {
+        max-width: 90vw;
+    }
 }
