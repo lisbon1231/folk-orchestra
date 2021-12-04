@@ -1,0 +1,25 @@
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacts-wrapper {
+    max-width: 60vw;
+}
+
+.contacts__phone,
+.contacts__email {
+    align-items: center;
+    display: flex;
+}
+
+.contacts__phone-number,
+.contacts__email-address {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.contacts__location {
+    margin-bottom: 20px;
+}

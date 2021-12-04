@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../../../static/typo.css" rel="stylesheet" ></link>
-    <link href="../../../../static/styles.css" rel="stylesheet" ></link>
-    <link href="../../../../static/styles/contacts.css" rel="stylesheet" ></link>
+    <link href="/static/typo.css" rel="stylesheet" ></link>
+    <link href="/static/styles.css" rel="stylesheet" ></link>
+    <link href="/static/styles/contacts.css" rel="stylesheet" ></link>
 
     <title>{{ title }}</title>
   </head>
@@ -15,6 +15,33 @@
     <div class="page__content">
       {{ header.props('Контакты', true)}}
       <main class="contacts">
+        <div class="contacts-wrapper">
+          <div class="contacts__location typo_size_m">Адресс: {{location}}</div>
+          <div class="contacts__phones">
+            {% for phoneData in phones %}
+              <div class="contacts__phone">
+                {% if phoneData.phone_owner %}
+                  <div class="contacts__phone-owner typo_theme_accent">{{phoneData.phone_owner}}:</div>
+                {% endif %}
+                <a href="tel:{{phoneData.phone}}" class="contacts__phone-number typo_size_m">
+                  {{phoneData.phone}}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="contacts__emails">
+            {% for emailData in emails %}
+              <div class="contacts__email">
+                {% if emailData.email_owner %}
+                  <div class="contacts__email-owner typo_theme_accent">{{emailData.email_owner}}:</div>
+                {% endif %}
+                <a href="mail:{{emailData.email}}" class="contacts__email-address typo_size_m">
+                  {{emailData.email}}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
       </main>
       {% include "./blocks/footer.njk" %}
       {% include "./blocks/modal.njk" %}
